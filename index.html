@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cerrajería Agustín | San Rafael Mendoza</title>
     <!-- SEO and Meta Tags -->
-    <meta name="description" content="Cerrajería Agustín en San Rafael, Mendoza. Especialistas en cerrajería automotriz, aperturas de urgencia, copias con chip y servicio a domicilio las 24 horas.">
+    <meta name="description"
+        content="Cerrajería Agustín en San Rafael, Mendoza. Especialistas en cerrajería automotriz, aperturas de urgencia, copias con chip y servicio a domicilio las 24 horas.">
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tudominio.com.ar/">
+    <meta property="og:title" content="Cerrajería Agustín | San Rafael Mendoza">
+    <meta property="og:description"
+        content="Especialistas en cerrajería automotriz, aperturas de urgencia y copias con chip. ¡Servicio 24 horas!">
+    <meta property="og:image" content="https://tudominio.com.ar/assets/hero_bg.png">
+    <!-- Preload -->
+    <link rel="preload" as="image" href="assets/hero_bg.png">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,15 +26,15 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Header -->
     <header id="navbar">
         <div class="container header-container">
             <a href="#" class="logo">
-                <i class="fa-solid fa-key"></i>
-                <span class="logo-text">Cerrajería <strong>Agustín</strong></span>
+                <img src="assets/logo solo nombre.png" alt="Cerrajería Agustín Logo" class="navbar-logo">
             </a>
-            
+
             <nav class="nav-links">
                 <a href="#inicio">Inicio</a>
                 <a href="#servicios">Servicios</a>
@@ -44,11 +55,17 @@
     <section id="inicio" class="hero">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
-            <h1 class="hero-title">Cerrajería Agustín:<br><span class="highlight">Seguridad y Confianza en San Rafael</span></h1>
-            <p class="hero-subtitle">Soluciones rápidas en aperturas, copias de llaves y programación automotriz. ¡Llegamos a donde estés!</p>
+            <h1 class="hero-title">
+                <img src="assets/logo con nombre.png" alt="Cerrajería Agustín" class="hero-main-logo">
+                <span class="highlight">Seguridad y Confianza en San
+                    Rafael</span>
+            </h1>
+            <p class="hero-subtitle">Soluciones rápidas en aperturas, copias de llaves y programación automotriz.
+                ¡Llegamos a donde estés!</p>
             <div class="hero-buttons">
-                <a href="https://wa.me/5492604516569" class="btn btn-primary btn-glow" target="_blank">
-                    <i class="fa-brands fa-whatsapp"></i> Urgencias 24hs
+                <a href="https://wa.me/5492604516569?text=Hola,%20me%20comunico%20desde%20la%20página%20web.%20Necesito..."
+                    class="btn btn-primary btn-glow" target="_blank">
+                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Urgencias 24hs
                 </a>
                 <a href="#servicios" class="btn btn-secondary">
                     Ver Servicios
@@ -64,33 +81,36 @@
                 <h2>Nuestros Servicios</h2>
                 <p>Especialistas en soluciones integrales para tu seguridad y la de tu vehículo.</p>
             </div>
-            
+
             <div class="services-grid">
                 <!-- Servicio 1 -->
                 <div class="service-card">
                     <div class="icon-wrapper">
-                        <i class="fa-solid fa-house-chimney-window"></i>
+                        <i class="fa-solid fa-house-chimney-window" aria-hidden="true"></i>
                     </div>
                     <h3>Hogar y Comercio</h3>
-                    <p>Aperturas de emergencia, cambio de combinaciones, instalación y reparación de cerraduras con la mejor tecnología.</p>
+                    <p>Aperturas de emergencia, cambio de combinaciones, instalación y reparación de cerraduras con la
+                        mejor tecnología.</p>
                 </div>
 
                 <!-- Servicio 2 -->
                 <div class="service-card featured">
                     <div class="icon-wrapper">
-                        <i class="fa-solid fa-car"></i>
+                        <i class="fa-solid fa-car" aria-hidden="true"></i>
                     </div>
                     <h3>Cerrajería Automotriz</h3>
-                    <p>Especialistas en todas las marcas. Copias con chip, telemandos y llaves de presencia (Keyless).</p>
+                    <p>Especialistas en todas las marcas. Copias con chip, telemandos y llaves de presencia (Keyless).
+                    </p>
                 </div>
 
                 <!-- Servicio 3 -->
                 <div class="service-card">
                     <div class="icon-wrapper">
-                        <i class="fa-solid fa-truck-fast"></i>
+                        <i class="fa-solid fa-truck-fast" aria-hidden="true"></i>
                     </div>
                     <h3>Servicio a Domicilio</h3>
-                    <p>Cobertura total en todo San Rafael. Disponibilidad las 24 horas para urgencias, donde sea que te encuentres.</p>
+                    <p>Cobertura total en todo San Rafael. Disponibilidad las 24 horas para urgencias, donde sea que te
+                        encuentres.</p>
                 </div>
             </div>
         </div>
@@ -100,10 +120,12 @@
     <section class="offer-banner">
         <div class="container offer-content">
             <div class="offer-text">
-                <h3><i class="fa-solid fa-percent"></i> ¡Descuento especial por cantidad en copias de llaves!</h3>
+                <h3><i class="fa-solid fa-percent" aria-hidden="true"></i> ¡Descuento especial por cantidad en copias de
+                    llaves!</h3>
                 <p>Consultanos por tu presupuesto personalizado y ahorrá garantizando copias de calidad.</p>
             </div>
-            <a href="https://wa.me/5492604516569" class="btn btn-white" target="_blank">Consultar Promo</a>
+            <a href="https://wa.me/5492604516569?text=Hola,%20me%20comunico%20desde%20la%20página%20web.%20Necesito..."
+                class="btn btn-white" target="_blank">Consultar Promo</a>
         </div>
     </section>
 
@@ -112,11 +134,12 @@
         <div class="container appointments-container">
             <div class="appointments-text">
                 <h2>Pedí tu turno <span class="highlight">rápidamente</span></h2>
-                <p>Evitá demoras. Programá y asegurá tu turno para la copia o programación de llaves con chip de tu vehículo.</p>
+                <p>Evitá demoras. Programá y asegurá tu turno para la copia o programación de llaves con chip de tu
+                    vehículo.</p>
                 <ul class="check-list">
-                    <li><i class="fa-solid fa-check"></i> Atención prioritaria sin esperas</li>
-                    <li><i class="fa-solid fa-check"></i> Asesoramiento profesional y técnico</li>
-                    <li><i class="fa-solid fa-check"></i> Presupuesto anticipado garantizado</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Atención prioritaria sin esperas</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Asesoramiento profesional y técnico</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Presupuesto anticipado garantizado</li>
                 </ul>
             </div>
             <div class="appointments-form-wrapper glass-panel">
@@ -142,7 +165,7 @@
                             <option value="Copia con chip">Copia con chip</option>
                             <option value="Llave programada/Presencia">Llave programada / Presencia</option>
                             <option value="Reparación de cerradura auto">Reparación de cerradura auto</option>
-                            <option value="Apertura (Urgencia)">Apertura de emergencia</option>
+                            <option value="Apertura (Urgencias)">Apertura de emergencia</option>
                             <option value="Otro">Otro servicio</option>
                         </select>
                     </div>
@@ -157,22 +180,24 @@
         <div class="container about-container">
             <div class="about-image">
                 <div class="image-wrapper">
-                    <i class="fa-solid fa-shield-halved"></i>
+                    <img src="assets/logo solo.png" alt="Logo Cerrajería Agustín" class="about-shield-logo">
                 </div>
             </div>
             <div class="about-content">
                 <div class="tag">Sobre Nosotros</div>
                 <h2>Experiencia y <span class="highlight">Tecnología</span> a tu servicio</h2>
                 <p class="lead">"En Cerrajería Agustín, somos referentes en seguridad y confianza en San Rafael."</p>
-                <p>Con años de experiencia, nos especializamos en soluciones integrales para el hogar y vehículos con tecnología de punta. Nuestro compromiso es tu tranquilidad, ofreciendo un servicio rápido, limpio y garantizado en cada apertura y programación que realizamos.</p>
-                
+                <p>Con años de experiencia, nos especializamos en soluciones integrales para el hogar y vehículos con
+                    tecnología de punta. Nuestro compromiso es tu tranquilidad, ofreciendo un servicio rápido, limpio y
+                    garantizado en cada apertura y programación que realizamos.</p>
+
                 <div class="stats-grid">
                     <div class="stat-item">
                         <div class="stat-number">24/7</div>
                         <div class="stat-text">Disponibilidad</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">+10<span class="small">Años</span></div>
+                        <div class="stat-number">+2<span class="small">Años</span></div>
                         <div class="stat-text">De Experiencia</div>
                     </div>
                 </div>
@@ -187,31 +212,32 @@
                 <h2>Encontranos Fácilmente</h2>
                 <p>Visitá nuestro taller especializado o solicitá un móvil a domicilio.</p>
             </div>
-            
+
             <div class="location-grid">
                 <div class="info-panel glass-panel">
                     <div class="info-group">
-                        <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="info-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
                         <div class="info-details">
                             <h3>Nuestra Ubicación</h3>
                             <p>Entre Ríos 599, San Rafael<br>Mendoza, Argentina</p>
                         </div>
                     </div>
-                    
+
                     <div class="info-group">
-                        <div class="info-icon"><i class="fa-regular fa-clock"></i></div>
+                        <div class="info-icon"><i class="fa-regular fa-clock" aria-hidden="true"></i></div>
                         <div class="info-details">
                             <h3>Horarios de Atención</h3>
                             <ul class="hours-list">
                                 <li><span>Lunes a Viernes:</span> <span>08:30 - 13:30 hs<br>17:00 - 21:00 hs</span></li>
                                 <li><span>Sábados:</span> <span>08:30 - 13:30 hs<br>17:00 - 20:30 hs</span></li>
-                                <li><span>Domingos y Feriados:</span> <span class="highlight-text">Solo Urgencias</span></li>
+                                <li><span>Domingos y Feriados:</span> <span class="highlight-text">Solo Urgencias</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="info-group">
-                        <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="info-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
                         <div class="info-details">
                             <h3>Contacto Directo</h3>
                             <p><a href="tel:5492604516569">+54 9 260 451-6569</a></p>
@@ -220,7 +246,10 @@
                 </div>
 
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.9840455584518!2d-68.34444002446736!3d-34.61338546197368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9679080df7a2cd15%3A0xe6719cdfd30c88db!2sEntre%20R%C3%ADos%20599%2C%20M5600%20San%20Rafael%2C%20Mendoza!5e0!3m2!1ses!2sar!4v1716301000000!5m2!1ses!2sar" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Cerrajería Agustín"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.9840455584518!2d-68.34444002446736!3d-34.61338546197368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9679080df7a2cd15%3A0xe6719cdfd30c88db!2sEntre%20R%C3%ADos%20599%2C%20M5600%20San%20Rafael%2C%20Mendoza!5e0!3m2!1ses!2sar!4v1716301000000!5m2!1ses!2sar"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" title="Mapa Cerrajería Agustín"></iframe>
                 </div>
             </div>
         </div>
@@ -231,42 +260,48 @@
         <div class="container footer-container">
             <div class="footer-brand">
                 <a href="#" class="logo footer-logo">
-                    <i class="fa-solid fa-key"></i>
-                    <span class="logo-text">Cerrajería <strong>Agustín</strong></span>
+                    <img src="assets/logo con nombre.png" alt="Cerrajería Agustín" class="footer-logo-img">
                 </a>
                 <p>Referentes en cerrajería automotriz y del hogar en San Rafael, Mendoza.</p>
             </div>
-            
+
             <div class="footer-social">
                 <h3>Seguinos en Redes</h3>
                 <div class="social-links">
-                    <a href="https://www.instagram.com/cerrajeria.agustin24hs/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/search/top?q=cerrajeria%20san%20rafael%20cerrajer%C3%ADa%20agustin" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://wa.me/5492604516569" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/cerrajeria.agustin24hs/" target="_blank"
+                        aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/search/top?q=cerrajeria%20san%20rafael%20cerrajer%C3%ADa%20agustin"
+                        target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"
+                            aria-hidden="true"></i></a>
+                    <a href="https://wa.me/5492604516569?text=Hola,%20me%20comunico%20desde%20la%20página%20web.%20Necesito..."
+                        target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"
+                            aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Cerrajería Agustín. Todos los derechos reservados.</p>
+            <p>&copy; 2026 Cerrajería Agustín. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <!-- Floating Actions Buttons -->
     <div class="floating-actions">
         <!-- Call Button Only visible on mobile -->
-        <a href="tel:5492604516569" class="float-btn call-btn d-mobile-only" aria-label="Llamar Ahora">
-            <i class="fa-solid fa-phone"></i>
+        <a href="tel:+5492604516569" class="float-btn call-btn d-mobile-only" aria-label="Llamar Ahora">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
             <span class="float-text">Llamar Ahora</span>
         </a>
-        
+
         <!-- WhatsApp Always Visible -->
-        <a href="https://wa.me/5492604516569" class="float-btn wa-btn" target="_blank" aria-label="WhatsApp Urgencias 24hs">
-            <i class="fa-brands fa-whatsapp"></i>
-            <span class="float-text">Urgencia 24hs</span>
+        <a href="https://wa.me/5492604516569?text=Hola,%20me%20comunico%20desde%20la%20página%20web.%20Necesito..."
+            class="float-btn wa-btn" target="_blank" aria-label="WhatsApp Urgencias 24hs">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+            <span class="float-text">Urgencias 24hs</span>
         </a>
     </div>
 
     <!-- Script -->
     <script src="script.js"></script>
 </body>
+
 </html>
