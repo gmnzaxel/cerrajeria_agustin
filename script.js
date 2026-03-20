@@ -83,4 +83,131 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // ───── Testimonials Carousel ─────
+    const track = document.getElementById('testimonials-track');
+    const dotsContainer = document.getElementById('testimonials-dots');
+    const prevBtn = document.getElementById('testimonial-prev');
+    const nextBtn = document.getElementById('testimonial-next');
+
+    if (track) {
+        const slides = Array.from(track.querySelectorAll('.testimonial-slide'));
+        const total = slides.length;
+        let current = 0;
+        let autoTimer = null;
+
+        // Build dots (1 per slide)
+        const buildDots = () => {
+            if (!dotsContainer) return;
+            dotsContainer.innerHTML = '';
+            slides.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.className = 't-dot' + (i === 0 ? ' active' : '');
+                dot.setAttribute('aria-label', `Reseña ${i + 1}`);
+                dot.addEventListener('click', () => goTo(i));
+                dotsContainer.appendChild(dot);
+            });
+        };
+
+        const updateDots = () => {
+            if (!dotsContainer) return;
+            dotsContainer.querySelectorAll('.t-dot').forEach((d, i) => {
+                d.classList.toggle('active', i === current);
+            });
+        };
+
+        const goTo = (idx) => {
+            current = (idx + total) % total;
+            const prevIdx = (current - 1 + total) % total;
+            const nextIdx = (current + 1) % total;
+
+            // Assign coverflow classes
+            slides.forEach((s, i) => {
+                s.className = 'testimonial-slide';
+                if (i === current) s.classList.add('active');
+                else if (i === prevIdx) s.classList.add('prev');
+                else if (i === nextIdx) s.classList.add('next');
+            });
+            
+            updateDots();
+        };
+
+        const next = () => goTo(current + 1);
+        const prev = () => goTo(current - 1);
+
+        const startAuto = () => {
+            stopAuto();
+            autoTimer = setInterval(next, 4500);
+        };
+
+        const stopAuto = () => {
+            if (autoTimer) clearInterval(autoTimer);
+        };
+
+        // Events
+        prevBtn?.addEventListener('click', () => { prev(); startAuto(); });
+        nextBtn?.addEventListener('click', () => { next(); startAuto(); });
+
+        track.addEventListener('mouseenter', stopAuto);
+        track.addEventListener('mouseleave', startAuto);
+
+        // Click on blurred slides
+        slides.forEach(s => {
+            s.addEventListener('click', () => {
+                if (s.classList.contains('prev')) { prev(); startAuto(); }
+                if (s.classList.contains('next')) { next(); startAuto(); }
+            });
+        });
+
+        // Touch swipe
+        let touchStartX = 0;
+        track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+        track.addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); startAuto(); }
+        });
+
+        // Init
+        buildDots();
+        goTo(0);
+        startAuto();
+    }
+
+    // ───── Scroll Reveal ─────
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ───── Active Menu Highlight ─────
+    const sections = document.querySelectorAll('section[id]');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navItems.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, {
+        threshold: 0.3, // Require 30% of section visible to trigger
+        rootMargin: "-20% 0px -60% 0px"
+    });
+
+    sections.forEach(sec => navObserver.observe(sec));
 });

@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cerrajería Agustín | San Rafael Mendoza</title>
+    <link rel="icon" type="image/webp" href="assets/favicon.webp">
+    <link rel="apple-touch-icon" href="assets/favicon.webp">
+    <meta name="theme-color" content="#FF2A2A">
     <!-- SEO and Meta Tags -->
     <meta name="description"
         content="Cerrajería Agustín en San Rafael, Mendoza. Especialistas en cerrajería automotriz, aperturas de urgencia, copias con chip y servicio a domicilio las 24 horas.">
@@ -14,9 +17,9 @@
     <meta property="og:title" content="Cerrajería Agustín | San Rafael Mendoza">
     <meta property="og:description"
         content="Especialistas en cerrajería automotriz, aperturas de urgencia y copias con chip. ¡Servicio 24 horas!">
-    <meta property="og:image" content="https://tudominio.com.ar/assets/hero_bg.png">
+    <meta property="og:image" content="https://tudominio.com.ar/assets/hero_bg.webp">
     <!-- Preload -->
-    <link rel="preload" as="image" href="assets/hero_bg.png">
+    <link rel="preload" as="image" href="assets/hero_bg.webp">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,14 +28,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
     <!-- Header -->
     <header id="navbar">
         <div class="container header-container">
-            <a href="#" class="logo">
-                <img src="assets/logo solo nombre.png" alt="Cerrajería Agustín Logo" class="navbar-logo">
+            <a href="#inicio" aria-label="Volver al inicio" class="logo">
+                <img src="assets/logo solo nombre.webp" alt="Cerrajería Agustín Logo" class="navbar-logo">
             </a>
 
             <nav class="nav-links">
@@ -50,13 +54,15 @@
             </button>
         </div>
     </header>
+    <!-- Main Content -->
+    <main>
 
     <!-- Hero Section -->
     <section id="inicio" class="hero">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <h1 class="hero-title">
-                <img src="assets/logo con nombre.png" alt="Cerrajería Agustín" class="hero-main-logo">
+                <img src="assets/logo con nombre.webp" alt="Cerrajería Agustín" class="hero-main-logo">
                 <span class="highlight">Seguridad y Confianza en San
                     Rafael</span>
             </h1>
@@ -77,53 +83,54 @@
     <!-- Brands Carousel Section -->
     <section class="brands-section">
         <div class="container section-header" style="margin-bottom: 2rem;">
-            <p style="text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px;">Especialistas en las principales marcas</p>
+            <p style="text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px;">Especialistas en las
+                principales marcas</p>
         </div>
         <!-- Carrusel de Autos -->
         <div class="brands-marquee auto-brands">
             <div class="brands-track">
                 <!-- Logos de Marcas Automotrices -->
-                <img src="assets/brands/audi.png" alt="Audi" class="brand-logo">
-                <img src="assets/brands/bmw.png" alt="BMW" class="brand-logo">
-                <img src="assets/brands/chevrolet.png" alt="Chevrolet" class="brand-logo">
-                <img src="assets/brands/citroen.png" alt="Citroen" class="brand-logo">
-                <img src="assets/brands/dodge.png" alt="Dodge" class="brand-logo">
-                <img src="assets/brands/fiat.png" alt="Fiat" class="brand-logo">
-                <img src="assets/brands/ford.png" alt="Ford" class="brand-logo">
-                <img src="assets/brands/honda.png" alt="Honda" class="brand-logo">
-                <img src="assets/brands/hyundai.png" alt="Hyundai" class="brand-logo">
-                <img src="assets/brands/jeep.png" alt="Jeep" class="brand-logo">
-                <img src="assets/brands/kia.png" alt="Kia" class="brand-logo">
-                <img src="assets/brands/landrover.png" alt="Land Rover" class="brand-logo">
-                <img src="assets/brands/mercedes.png" alt="Mercedes" class="brand-logo">
-                <img src="assets/brands/mitsubishi.png" alt="Mitsubishi" class="brand-logo">
-                <img src="assets/brands/nissan.png" alt="Nissan" class="brand-logo">
-                <img src="assets/brands/peugeot.png" alt="Peugeot" class="brand-logo">
-                <img src="assets/brands/renault.png" alt="Renault" class="brand-logo">
-                <img src="assets/brands/suzuki.png" alt="Suzuki" class="brand-logo">
-                <img src="assets/brands/toyota.png" alt="Toyota" class="brand-logo">
-                <img src="assets/brands/volkswagen.png" alt="Volkswagen" class="brand-logo">
+                <img loading="lazy" src="assets/brands/audi.webp" alt="Audi" class="brand-logo">
+                <img loading="lazy" src="assets/brands/bmw.webp" alt="BMW" class="brand-logo">
+                <img loading="lazy" src="assets/brands/chevrolet.webp" alt="Chevrolet" class="brand-logo">
+                <img loading="lazy" src="assets/brands/citroen.webp" alt="Citroen" class="brand-logo">
+                <img loading="lazy" src="assets/brands/dodge.webp" alt="Dodge" class="brand-logo">
+                <img loading="lazy" src="assets/brands/fiat.webp" alt="Fiat" class="brand-logo">
+                <img loading="lazy" src="assets/brands/ford.webp" alt="Ford" class="brand-logo">
+                <img loading="lazy" src="assets/brands/honda.webp" alt="Honda" class="brand-logo">
+                <img loading="lazy" src="assets/brands/hyundai.webp" alt="Hyundai" class="brand-logo">
+                <img loading="lazy" src="assets/brands/jeep.webp" alt="Jeep" class="brand-logo">
+                <img loading="lazy" src="assets/brands/kia.webp" alt="Kia" class="brand-logo">
+                <img loading="lazy" src="assets/brands/landrover.webp" alt="Land Rover" class="brand-logo">
+                <img loading="lazy" src="assets/brands/mercedes.webp" alt="Mercedes" class="brand-logo">
+                <img loading="lazy" src="assets/brands/mitsubishi.webp" alt="Mitsubishi" class="brand-logo">
+                <img loading="lazy" src="assets/brands/nissan.webp" alt="Nissan" class="brand-logo">
+                <img loading="lazy" src="assets/brands/peugeot.webp" alt="Peugeot" class="brand-logo">
+                <img loading="lazy" src="assets/brands/renault.webp" alt="Renault" class="brand-logo">
+                <img loading="lazy" src="assets/brands/suzuki.webp" alt="Suzuki" class="brand-logo">
+                <img loading="lazy" src="assets/brands/toyota.webp" alt="Toyota" class="brand-logo">
+                <img loading="lazy" src="assets/brands/volkswagen.webp" alt="Volkswagen" class="brand-logo">
                 <!-- Duplicado para efecto infinito -->
-                <img src="assets/brands/audi.png" alt="Audi" class="brand-logo">
-                <img src="assets/brands/bmw.png" alt="BMW" class="brand-logo">
-                <img src="assets/brands/chevrolet.png" alt="Chevrolet" class="brand-logo">
-                <img src="assets/brands/citroen.png" alt="Citroen" class="brand-logo">
-                <img src="assets/brands/dodge.png" alt="Dodge" class="brand-logo">
-                <img src="assets/brands/fiat.png" alt="Fiat" class="brand-logo">
-                <img src="assets/brands/ford.png" alt="Ford" class="brand-logo">
-                <img src="assets/brands/honda.png" alt="Honda" class="brand-logo">
-                <img src="assets/brands/hyundai.png" alt="Hyundai" class="brand-logo">
-                <img src="assets/brands/jeep.png" alt="Jeep" class="brand-logo">
-                <img src="assets/brands/kia.png" alt="Kia" class="brand-logo">
-                <img src="assets/brands/landrover.png" alt="Land Rover" class="brand-logo">
-                <img src="assets/brands/mercedes.png" alt="Mercedes" class="brand-logo">
-                <img src="assets/brands/mitsubishi.png" alt="Mitsubishi" class="brand-logo">
-                <img src="assets/brands/nissan.png" alt="Nissan" class="brand-logo">
-                <img src="assets/brands/peugeot.png" alt="Peugeot" class="brand-logo">
-                <img src="assets/brands/renault.png" alt="Renault" class="brand-logo">
-                <img src="assets/brands/suzuki.png" alt="Suzuki" class="brand-logo">
-                <img src="assets/brands/toyota.png" alt="Toyota" class="brand-logo">
-                <img src="assets/brands/volkswagen.png" alt="Volkswagen" class="brand-logo">
+                <img loading="lazy" src="assets/brands/audi.webp" alt="Audi" class="brand-logo">
+                <img loading="lazy" src="assets/brands/bmw.webp" alt="BMW" class="brand-logo">
+                <img loading="lazy" src="assets/brands/chevrolet.webp" alt="Chevrolet" class="brand-logo">
+                <img loading="lazy" src="assets/brands/citroen.webp" alt="Citroen" class="brand-logo">
+                <img loading="lazy" src="assets/brands/dodge.webp" alt="Dodge" class="brand-logo">
+                <img loading="lazy" src="assets/brands/fiat.webp" alt="Fiat" class="brand-logo">
+                <img loading="lazy" src="assets/brands/ford.webp" alt="Ford" class="brand-logo">
+                <img loading="lazy" src="assets/brands/honda.webp" alt="Honda" class="brand-logo">
+                <img loading="lazy" src="assets/brands/hyundai.webp" alt="Hyundai" class="brand-logo">
+                <img loading="lazy" src="assets/brands/jeep.webp" alt="Jeep" class="brand-logo">
+                <img loading="lazy" src="assets/brands/kia.webp" alt="Kia" class="brand-logo">
+                <img loading="lazy" src="assets/brands/landrover.webp" alt="Land Rover" class="brand-logo">
+                <img loading="lazy" src="assets/brands/mercedes.webp" alt="Mercedes" class="brand-logo">
+                <img loading="lazy" src="assets/brands/mitsubishi.webp" alt="Mitsubishi" class="brand-logo">
+                <img loading="lazy" src="assets/brands/nissan.webp" alt="Nissan" class="brand-logo">
+                <img loading="lazy" src="assets/brands/peugeot.webp" alt="Peugeot" class="brand-logo">
+                <img loading="lazy" src="assets/brands/renault.webp" alt="Renault" class="brand-logo">
+                <img loading="lazy" src="assets/brands/suzuki.webp" alt="Suzuki" class="brand-logo">
+                <img loading="lazy" src="assets/brands/toyota.webp" alt="Toyota" class="brand-logo">
+                <img loading="lazy" src="assets/brands/volkswagen.webp" alt="Volkswagen" class="brand-logo">
             </div>
         </div>
     </section>
@@ -131,14 +138,14 @@
     <!-- Services Section -->
     <section id="servicios" class="services section-padding">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <h2>Nuestros Servicios</h2>
                 <p>Especialistas en soluciones integrales para tu seguridad y la de tu vehículo.</p>
             </div>
 
             <div class="services-grid">
                 <!-- Servicio 1 -->
-                <div class="service-card">
+                <div class="service-card reveal">
                     <div class="icon-wrapper">
                         <i class="fa-solid fa-house-chimney-window" aria-hidden="true"></i>
                     </div>
@@ -148,7 +155,7 @@
                 </div>
 
                 <!-- Servicio 2 -->
-                <div class="service-card featured">
+                <div class="service-card featured reveal delay-1">
                     <div class="icon-wrapper">
                         <i class="fa-solid fa-car" aria-hidden="true"></i>
                     </div>
@@ -158,7 +165,7 @@
                 </div>
 
                 <!-- Servicio 3 -->
-                <div class="service-card">
+                <div class="service-card reveal delay-2">
                     <div class="icon-wrapper">
                         <i class="fa-solid fa-truck-fast" aria-hidden="true"></i>
                     </div>
@@ -171,7 +178,7 @@
     </section>
 
     <!-- Offer Banner -->
-    <section class="offer-banner">
+    <section class="offer-banner reveal">
         <div class="container offer-content">
             <div class="offer-text">
                 <h3><i class="fa-solid fa-percent" aria-hidden="true"></i> ¡Descuento especial por cantidad en copias de
@@ -186,7 +193,7 @@
     <!-- Appointments Form Section -->
     <section id="turnos" class="appointments section-padding">
         <div class="container appointments-container">
-            <div class="appointments-text">
+            <div class="appointments-text reveal">
                 <h2>Pedí tu turno <span class="highlight">rápidamente</span></h2>
                 <p>Evitá demoras. Programá y asegurá tu turno para la copia o programación de llaves con chip de tu
                     vehículo.</p>
@@ -196,7 +203,7 @@
                     <li><i class="fa-solid fa-check" aria-hidden="true"></i> Presupuesto anticipado garantizado</li>
                 </ul>
             </div>
-            <div class="appointments-form-wrapper glass-panel">
+            <div class="appointments-form-wrapper glass-panel reveal delay-1">
                 <form id="turno-form" class="turno-form">
                     <div class="form-group">
                         <label for="nombre">Nombre y Apellido</label>
@@ -232,12 +239,12 @@
     <!-- About Us Section -->
     <section id="nosotros" class="about section-padding">
         <div class="container about-container">
-            <div class="about-image">
+            <div class="about-image reveal">
                 <div class="image-wrapper">
-                    <img src="assets/logo solo.png" alt="Logo Cerrajería Agustín" class="about-shield-logo">
+                    <img loading="lazy" src="assets/logo solo.webp" alt="Logo Cerrajería Agustín" class="about-shield-logo">
                 </div>
             </div>
-            <div class="about-content">
+            <div class="about-content reveal delay-1">
                 <div class="tag">Sobre Nosotros</div>
                 <h2>Experiencia y <span class="highlight">Tecnología</span> a tu servicio</h2>
                 <p class="lead">"En Cerrajería Agustín, somos referentes en seguridad y confianza en San Rafael."</p>
@@ -259,8 +266,205 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section id="testimonios" class="testimonials section-padding reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2>Lo que dicen nuestros <span class="highlight">clientes</span></h2>
+                <p>Opiniones verificadas de Google Maps ⭐⭐⭐⭐⭐</p>
+            </div>
+
+            <div class="testimonials-carousel-wrapper">
+                <!-- Nav Buttons -->
+                <button class="carousel-btn carousel-prev" id="testimonial-prev" aria-label="Anterior">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn carousel-next" id="testimonial-next" aria-label="Siguiente">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+                <!-- Track -->
+                <div class="testimonials-track-container">
+                    <div class="testimonials-track" id="testimonials-track">
+
+                        <div class="testimonial-slide">
+                            <div class="tcard">
+                                <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
+                                <p class="tcard-text">Excelente atención del personal y muy buen trabajo. Recomendable
+                                    👌</p>
+                                <div class="tcard-stars">★★★★★</div>
+                                <div class="tcard-author">
+                                    <div class="tcard-avatar">L</div>
+                                    <div class="tcard-info">
+                                        <strong>Luciano Ganga</strong>
+                                        <span>Hace 4 meses · Google</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="tcard">
+                                <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
+                                <p class="tcard-text">NO BUSQUEN MÁS, Cerrajería Agustín es LA CERRAJERÍA de San Rafael.
+                                    Excelente atención, predisposición y súper responsable.</p>
+                                <div class="tcard-stars">★★★★★</div>
+                                <div class="tcard-author">
+                                    <div class="tcard-avatar">R</div>
+                                    <div class="tcard-info">
+                                        <strong>Ricardo Portilla</strong>
+                                        <span>Hace 3 meses · Google</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="tcard">
+                                <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
+                                <p class="tcard-text">Excelente servicio, el trabajo quedó de 10! Y muy buena atención.
+                                    Totalmente recomendable!</p>
+                                <div class="tcard-stars">★★★★★</div>
+                                <div class="tcard-author">
+                                    <div class="tcard-avatar">F</div>
+                                    <div class="tcard-info">
+                                        <strong>Fabio Cabrera</strong>
+                                        <span>2 semanas atrás · Google</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="tcard">
+                                <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
+                                <p class="tcard-text">Muy buen servicio. Los llamé y vinieron en menos de media hora!
+                                    Trabajó rápido, con mucho profesionalismo y me dejó algunos consejitos de uso. Son
+                                    unos genios.</p>
+                                <div class="tcard-stars">★★★★★</div>
+                                <div class="tcard-author">
+                                    <div class="tcard-avatar">A</div>
+                                    <div class="tcard-info">
+                                        <strong>Antonella Frana</strong>
+                                        <span>Hace 3 meses · Google</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="tcard">
+                                <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
+                                <p class="tcard-text">Excelente atención y precios! Los chicos además de agradables y
+                                    buena onda te orientan y dan tips, unos genios.</p>
+                                <div class="tcard-stars">★★★★★</div>
+                                <div class="tcard-author">
+                                    <div class="tcard-avatar">A</div>
+                                    <div class="tcard-info">
+                                        <strong>Ana María Calderón</strong>
+                                        <span>Hace 2 meses · Google</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="tcard">
+                                <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
+                                <p class="tcard-text">Excelente atención, me hicieron 3 llaves en menos de 30 minutos.
+                                    Sigan adelante con su empresa que les va a ir muy bien!</p>
+                                <div class="tcard-stars">★★★★★</div>
+                                <div class="tcard-author">
+                                    <div class="tcard-avatar">C</div>
+                                    <div class="tcard-info">
+                                        <strong>Carlos Chavanne</strong>
+                                        <span>Hace 2 meses · Google</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="tcard">
+                                <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
+                                <p class="tcard-text">Excelente servicio para llaves de auto con telecomando
+                                    codificadas. Atención amable y súper exprés. Gracias!</p>
+                                <div class="tcard-stars">★★★★★</div>
+                                <div class="tcard-author">
+                                    <div class="tcard-avatar">P</div>
+                                    <div class="tcard-info">
+                                        <strong>Patricia Nicolao</strong>
+                                        <span>Hace un mes · Google</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="tcard">
+                                <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
+                                <p class="tcard-text">Excelente atención. Muy responsables y además rápidos y efectivos.
+                                    Precios adecuados. Para recomendar!</p>
+                                <div class="tcard-stars">★★★★★</div>
+                                <div class="tcard-author">
+                                    <div class="tcard-avatar">V</div>
+                                    <div class="tcard-info">
+                                        <strong>Viviana Garzuzi</strong>
+                                        <span>Hace 2 meses · Google</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="tcard">
+                                <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
+                                <p class="tcard-text">Excelente servicio y atención! Súper rápidos. Recomiendo 🙌</p>
+                                <div class="tcard-stars">★★★★★</div>
+                                <div class="tcard-author">
+                                    <div class="tcard-avatar">A</div>
+                                    <div class="tcard-info">
+                                        <strong>Agustina Pieres</strong>
+                                        <span>Hace un mes · Google</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="tcard">
+                                <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
+                                <p class="tcard-text">Excelente servicio! Súper rápidos y amables! Recomendables al
+                                    100%.</p>
+                                <div class="tcard-stars">★★★★★</div>
+                                <div class="tcard-author">
+                                    <div class="tcard-avatar">A</div>
+                                    <div class="tcard-info">
+                                        <strong>Analia Farruchi</strong>
+                                        <span>Hace un mes · Google</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dots -->
+            <div class="testimonials-dots" id="testimonials-dots"></div>
+
+            <div class="testimonials-cta">
+                <a href="https://maps.app.goo.gl/cTvYLtCei6GBtvhm7" target="_blank" class="btn btn-secondary">
+                    <i class="fa-brands fa-google" aria-hidden="true"></i> Ver todas en Google Maps
+                </a>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Location and Hours -->
-    <section id="ubicacion" class="location section-padding">
+    <section id="ubicacion" class="location section-padding reveal">
         <div class="container">
             <div class="section-header">
                 <h2>Encontranos Fácilmente</h2>
@@ -299,9 +503,9 @@
                     </div>
                 </div>
 
-                <div class="map-container">
+                <div class="map-container reveal delay-1">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.9840455584518!2d-68.34444002446736!3d-34.61338546197368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9679080df7a2cd15%3A0xe6719cdfd30c88db!2sEntre%20R%C3%ADos%20599%2C%20M5600%20San%20Rafael%2C%20Mendoza!5e0!3m2!1ses!2sar!4v1716301000000!5m2!1ses!2sar"
+                        src="https://maps.google.com/maps?q=cerrajer%C3%ADa%20AGUST%C3%8DN%2024HS%20URGENCIAS.%20Entre%20R%C3%ADos%20599%2C%20San%20Rafael&t=&z=16&ie=UTF8&iwloc=&output=embed"
                         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade" title="Mapa Cerrajería Agustín"></iframe>
                 </div>
@@ -314,39 +518,43 @@
         <div class="brands-marquee lock-brands">
             <div class="brands-track reverse">
                 <!-- Logos de Cerraduras -->
-                <img src="assets/brands/yale.png" alt="Yale" class="brand-logo lock-brand">
-                <img src="assets/brands/kallay.png" alt="Kallay" class="brand-logo lock-brand">
-                <img src="assets/brands/acytra.jpg" alt="Acytra" class="brand-logo lock-brand">
-                <img src="assets/brands/trabex.png" alt="Trabex" class="brand-logo lock-brand">
-                <img src="assets/brands/prive.png" alt="Prive" class="brand-logo lock-brand">
-                <img src="assets/brands/bronzen.png" alt="Bronzen" class="brand-logo lock-brand">
-                <img src="assets/brands/ROA-logo.png" alt="ROA" class="brand-logo lock-brand">
-                <img src="assets/brands/jma.png" alt="JMA" class="brand-logo lock-brand">
-                <img src="assets/brands/lupum.png" alt="Lupum" class="brand-logo lock-brand">
-                <img src="assets/brands/sekur.png" alt="Sekur" class="brand-logo lock-brand">
-                <img src="assets/brands/yaltres.png" alt="Yaltres" class="brand-logo lock-brand">
+                <img loading="lazy" src="assets/brands/yale.webp" alt="Yale" class="brand-logo lock-brand">
+                <img loading="lazy" src="assets/brands/kallay.webp" alt="Kallay" class="brand-logo lock-brand">
+                <img loading="lazy" src="assets/brands/acytra.webp" alt="Acytra" class="brand-logo lock-brand">
+                <img loading="lazy" src="assets/brands/trabex.webp" alt="Trabex" class="brand-logo lock-brand">
+                <img loading="lazy" src="assets/brands/prive.webp" alt="Prive" class="brand-logo lock-brand">
+                <img loading="lazy" src="assets/brands/bronzen.webp" alt="Bronzen" class="brand-logo lock-brand">
+                <img loading="lazy" src="assets/brands/ROA-logo.webp" alt="ROA" class="brand-logo lock-brand">
+                <img loading="lazy" src="assets/brands/jma.webp" alt="JMA" class="brand-logo lock-brand">
+                <img loading="lazy" src="assets/brands/lupum.webp" alt="Lupum" class="brand-logo lock-brand">
+                <img loading="lazy" src="assets/brands/sekur.webp" alt="Sekur" class="brand-logo lock-brand">
+                <img loading="lazy" src="assets/brands/yaltres.webp" alt="Yaltres" class="brand-logo lock-brand">
+                <img loading="lazy" src="assets/brands/andif.webp" alt="Andif" class="brand-logo lock-brand">
                 <!-- Duplicado para efecto infinito -->
-                <img src="assets/brands/yale.png" alt="Yale" class="brand-logo lock-brand">
-                <img src="assets/brands/kallay.png" alt="Kallay" class="brand-logo lock-brand">
-                <img src="assets/brands/acytra.jpg" alt="Acytra" class="brand-logo lock-brand">
-                <img src="assets/brands/trabex.png" alt="Trabex" class="brand-logo lock-brand">
-                <img src="assets/brands/prive.png" alt="Prive" class="brand-logo lock-brand">
-                <img src="assets/brands/bronzen.png" alt="Bronzen" class="brand-logo lock-brand">
-                <img src="assets/brands/ROA-logo.png" alt="ROA" class="brand-logo lock-brand">
-                <img src="assets/brands/jma.png" alt="JMA" class="brand-logo lock-brand">
-                <img src="assets/brands/lupum.png" alt="Lupum" class="brand-logo lock-brand">
-                <img src="assets/brands/sekur.png" alt="Sekur" class="brand-logo lock-brand">
-                <img src="assets/brands/yaltres.png" alt="Yaltres" class="brand-logo lock-brand">
+                <img loading="lazy" src="assets/brands/yale.webp" alt="Yale" class="brand-logo lock-brand">
+                <img loading="lazy" src="assets/brands/kallay.webp" alt="Kallay" class="brand-logo lock-brand">
+                <img loading="lazy" src="assets/brands/acytra.webp" alt="Acytra" class="brand-logo lock-brand">
+                <img loading="lazy" src="assets/brands/trabex.webp" alt="Trabex" class="brand-logo lock-brand">
+                <img loading="lazy" src="assets/brands/prive.webp" alt="Prive" class="brand-logo lock-brand">
+                <img loading="lazy" src="assets/brands/bronzen.webp" alt="Bronzen" class="brand-logo lock-brand">
+                <img loading="lazy" src="assets/brands/ROA-logo.webp" alt="ROA" class="brand-logo lock-brand">
+                <img loading="lazy" src="assets/brands/jma.webp" alt="JMA" class="brand-logo lock-brand">
+                <img loading="lazy" src="assets/brands/lupum.webp" alt="Lupum" class="brand-logo lock-brand">
+                <img loading="lazy" src="assets/brands/sekur.webp" alt="Sekur" class="brand-logo lock-brand">
+                <img loading="lazy" src="assets/brands/yaltres.webp" alt="Yaltres" class="brand-logo lock-brand">
+                <img loading="lazy" src="assets/brands/andif.webp" alt="Andif" class="brand-logo lock-brand">
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-brand">
-                <a href="#" class="logo footer-logo">
-                    <img src="assets/logo con nombre.png" alt="Cerrajería Agustín" class="footer-logo-img">
+                <a href="#inicio" aria-label="Volver al inicio" class="logo footer-logo">
+                    <img loading="lazy" src="assets/logo con nombre.webp" alt="Cerrajería Agustín" class="footer-logo-img">
                 </a>
                 <p>Referentes en cerrajería automotriz y del hogar en San Rafael, Mendoza.</p>
             </div>
@@ -387,7 +595,7 @@
     </div>
 
     <!-- Script -->
-    <script src="script.js"></script>
+    
 </body>
 
 </html>
