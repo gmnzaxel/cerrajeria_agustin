@@ -27,7 +27,10 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
     <script src="script.js" defer></script>
 
     <!-- 🚀 SEO Local Avanzado (JSON-LD) para dominar Búsquedas en Google Maps y Google -->
@@ -41,7 +44,7 @@
       "url": "https://tudominio.com.ar/",
       "telephone": "+5492604516569",
       "priceRange": "$$",
-      "description": "Especialistas en cerrajería automotriz, aperturas de urgencia, copias con chip y servicio a domicilio en San Rafael. Urgencias las 24 horas.",
+      "description": "Especialistas en cerrajería automotriz, aperturas de urgencia, copias de llaves de autos y hogar. Servicio a domicilio en San Rafael. Urgencias las 24 horas.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Entre Ríos 599",
@@ -78,7 +81,7 @@
       ],
       "sameAs": [
         "https://www.instagram.com/cerrajeria.agustin24hs/",
-        "https://www.facebook.com/search/top?q=cerrajeria%20san%20rafael%20cerrajer%C3%ADa%20agustin"
+        "https://www.facebook.com/share/1CMZHc9FZw/"
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -130,495 +133,497 @@
     <!-- Main Content -->
     <main>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <h1 class="hero-title">
-                <img src="assets/logo con nombre.webp" alt="Cerrajería Agustín" class="hero-main-logo">
-                <span class="highlight">Seguridad y Confianza en San
-                    Rafael</span>
-            </h1>
-            <p class="hero-subtitle">Soluciones rápidas en aperturas, copias de llaves y programación automotriz.
-                ¡Llegamos a donde estés!</p>
-            <div class="hero-buttons">
+        <!-- Hero Section -->
+        <section id="inicio" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <h1 class="hero-title">
+                    <img src="assets/logo con nombre.webp" alt="Cerrajería Agustín" class="hero-main-logo">
+                    <span class="highlight">Seguridad y Confianza en San
+                        Rafael</span>
+                </h1>
+                <p class="hero-subtitle">Soluciones rápidas en aperturas, copias de llaves y programación automotriz.
+                    ¡Llegamos a donde estés!</p>
+                <div class="hero-buttons">
+                    <a href="tel:+5492604516569" class="btn btn-primary btn-glow">
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i> Urgencias 24hs
+                    </a>
+                    <a href="https://wa.me/5492604516569?text=Hola,%20me%20comunico%20desde%20la%20página%20web.%20Tengo%20una%20consulta..."
+                        class="btn btn-secondary" target="_blank">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Consultas
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brands Carousel Section -->
+        <section class="brands-section">
+            <div class="container section-header" style="margin-bottom: 2rem;">
+                <p style="text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px;">Especialistas en las
+                    principales marcas</p>
+            </div>
+            <!-- Carrusel de Autos -->
+            <div class="brands-marquee auto-brands">
+                <div class="brands-track">
+                    <!-- Logos de Marcas Automotrices -->
+                    <img loading="lazy" src="assets/brands/audi.webp" alt="Audi" class="brand-logo">
+                    <img loading="lazy" src="assets/brands/bmw.webp" alt="BMW" class="brand-logo">
+                    <img loading="lazy" src="assets/brands/chevrolet.webp" alt="Chevrolet" class="brand-logo">
+                    <img loading="lazy" src="assets/brands/citroen.webp" alt="Citroen" class="brand-logo">
+                    <img loading="lazy" src="assets/brands/dodge.webp" alt="Dodge" class="brand-logo">
+                    <img loading="lazy" src="assets/brands/fiat.webp" alt="Fiat" class="brand-logo">
+                    <img loading="lazy" src="assets/brands/ford.webp" alt="Ford" class="brand-logo">
+                    <img loading="lazy" src="assets/brands/honda.webp" alt="Honda" class="brand-logo">
+                    <img loading="lazy" src="assets/brands/hyundai.webp" alt="Hyundai" class="brand-logo">
+                    <img loading="lazy" src="assets/brands/jeep.webp" alt="Jeep" class="brand-logo">
+                    <img loading="lazy" src="assets/brands/kia.webp" alt="Kia" class="brand-logo">
+                    <img loading="lazy" src="assets/brands/landrover.webp" alt="Land Rover" class="brand-logo">
+                    <img loading="lazy" src="assets/brands/mercedes.webp" alt="Mercedes" class="brand-logo">
+                    <img loading="lazy" src="assets/brands/mitsubishi.webp" alt="Mitsubishi" class="brand-logo">
+                    <img loading="lazy" src="assets/brands/nissan.webp" alt="Nissan" class="brand-logo">
+                    <img loading="lazy" src="assets/brands/peugeot.webp" alt="Peugeot" class="brand-logo">
+                    <img loading="lazy" src="assets/brands/renault.webp" alt="Renault" class="brand-logo">
+                    <img loading="lazy" src="assets/brands/suzuki.webp" alt="Suzuki" class="brand-logo">
+                    <img loading="lazy" src="assets/brands/toyota.webp" alt="Toyota" class="brand-logo">
+                    <img loading="lazy" src="assets/brands/volkswagen.webp" alt="Volkswagen" class="brand-logo">
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="servicios" class="services section-padding">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Nuestros Servicios</h2>
+                    <p>Especialistas en soluciones integrales para tu seguridad y la de tu vehículo.</p>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Servicio 1 -->
+                    <div class="service-card reveal">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-house-chimney-window" aria-hidden="true"></i>
+                        </div>
+                        <h3>Hogar y Comercio</h3>
+                        <p>Aperturas de emergencia, cambio de combinaciones, instalación y reparación de cerraduras con
+                            la
+                            mejor tecnología.</p>
+                    </div>
+
+                    <!-- Servicio 2 -->
+                    <div class="service-card featured reveal delay-1">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-car" aria-hidden="true"></i>
+                        </div>
+                        <h3>Cerrajería Automotriz</h3>
+                        <p>Especialistas en todas las marcas. Copias con chip, telemandos y llaves de presencia.
+                        </p>
+                    </div>
+
+                    <!-- Servicio 3 -->
+                    <div class="service-card reveal delay-2">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-truck-fast" aria-hidden="true"></i>
+                        </div>
+                        <h3>Servicio a Domicilio</h3>
+                        <p>Cobertura total en todo San Rafael. Disponibilidad las 24 horas para urgencias, donde sea que
+                            te
+                            encuentres.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Offer Banner -->
+        <section class="offer-banner reveal">
+            <div class="container offer-content">
+                <div class="offer-text">
+                    <h3><i class="fa-solid fa-percent" aria-hidden="true"></i> ¡Descuento especial por cantidad en
+                        copias de
+                        llaves!</h3>
+                    <p>Consultanos por tu presupuesto personalizado y ahorrá garantizando copias de calidad.</p>
+                </div>
                 <a href="https://wa.me/5492604516569?text=Hola,%20me%20comunico%20desde%20la%20página%20web.%20Necesito..."
-                    class="btn btn-primary btn-glow" target="_blank">
-                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Urgencias 24hs
-                </a>
-                <a href="#servicios" class="btn btn-secondary">
-                    Ver Servicios
-                </a>
+                    class="btn btn-white" target="_blank">Consultar Promo</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Brands Carousel Section -->
-    <section class="brands-section">
-        <div class="container section-header" style="margin-bottom: 2rem;">
-            <p style="text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px;">Especialistas en las
-                principales marcas</p>
-        </div>
-        <!-- Carrusel de Autos -->
-        <div class="brands-marquee auto-brands">
-            <div class="brands-track">
-                <!-- Logos de Marcas Automotrices -->
-                <img loading="lazy" src="assets/brands/audi.webp" alt="Audi" class="brand-logo">
-                <img loading="lazy" src="assets/brands/bmw.webp" alt="BMW" class="brand-logo">
-                <img loading="lazy" src="assets/brands/chevrolet.webp" alt="Chevrolet" class="brand-logo">
-                <img loading="lazy" src="assets/brands/citroen.webp" alt="Citroen" class="brand-logo">
-                <img loading="lazy" src="assets/brands/dodge.webp" alt="Dodge" class="brand-logo">
-                <img loading="lazy" src="assets/brands/fiat.webp" alt="Fiat" class="brand-logo">
-                <img loading="lazy" src="assets/brands/ford.webp" alt="Ford" class="brand-logo">
-                <img loading="lazy" src="assets/brands/honda.webp" alt="Honda" class="brand-logo">
-                <img loading="lazy" src="assets/brands/hyundai.webp" alt="Hyundai" class="brand-logo">
-                <img loading="lazy" src="assets/brands/jeep.webp" alt="Jeep" class="brand-logo">
-                <img loading="lazy" src="assets/brands/kia.webp" alt="Kia" class="brand-logo">
-                <img loading="lazy" src="assets/brands/landrover.webp" alt="Land Rover" class="brand-logo">
-                <img loading="lazy" src="assets/brands/mercedes.webp" alt="Mercedes" class="brand-logo">
-                <img loading="lazy" src="assets/brands/mitsubishi.webp" alt="Mitsubishi" class="brand-logo">
-                <img loading="lazy" src="assets/brands/nissan.webp" alt="Nissan" class="brand-logo">
-                <img loading="lazy" src="assets/brands/peugeot.webp" alt="Peugeot" class="brand-logo">
-                <img loading="lazy" src="assets/brands/renault.webp" alt="Renault" class="brand-logo">
-                <img loading="lazy" src="assets/brands/suzuki.webp" alt="Suzuki" class="brand-logo">
-                <img loading="lazy" src="assets/brands/toyota.webp" alt="Toyota" class="brand-logo">
-                <img loading="lazy" src="assets/brands/volkswagen.webp" alt="Volkswagen" class="brand-logo">
-                <!-- Duplicado para efecto infinito -->
-                <img loading="lazy" src="assets/brands/audi.webp" alt="Audi" class="brand-logo">
-                <img loading="lazy" src="assets/brands/bmw.webp" alt="BMW" class="brand-logo">
-                <img loading="lazy" src="assets/brands/chevrolet.webp" alt="Chevrolet" class="brand-logo">
-                <img loading="lazy" src="assets/brands/citroen.webp" alt="Citroen" class="brand-logo">
-                <img loading="lazy" src="assets/brands/dodge.webp" alt="Dodge" class="brand-logo">
-                <img loading="lazy" src="assets/brands/fiat.webp" alt="Fiat" class="brand-logo">
-                <img loading="lazy" src="assets/brands/ford.webp" alt="Ford" class="brand-logo">
-                <img loading="lazy" src="assets/brands/honda.webp" alt="Honda" class="brand-logo">
-                <img loading="lazy" src="assets/brands/hyundai.webp" alt="Hyundai" class="brand-logo">
-                <img loading="lazy" src="assets/brands/jeep.webp" alt="Jeep" class="brand-logo">
-                <img loading="lazy" src="assets/brands/kia.webp" alt="Kia" class="brand-logo">
-                <img loading="lazy" src="assets/brands/landrover.webp" alt="Land Rover" class="brand-logo">
-                <img loading="lazy" src="assets/brands/mercedes.webp" alt="Mercedes" class="brand-logo">
-                <img loading="lazy" src="assets/brands/mitsubishi.webp" alt="Mitsubishi" class="brand-logo">
-                <img loading="lazy" src="assets/brands/nissan.webp" alt="Nissan" class="brand-logo">
-                <img loading="lazy" src="assets/brands/peugeot.webp" alt="Peugeot" class="brand-logo">
-                <img loading="lazy" src="assets/brands/renault.webp" alt="Renault" class="brand-logo">
-                <img loading="lazy" src="assets/brands/suzuki.webp" alt="Suzuki" class="brand-logo">
-                <img loading="lazy" src="assets/brands/toyota.webp" alt="Toyota" class="brand-logo">
-                <img loading="lazy" src="assets/brands/volkswagen.webp" alt="Volkswagen" class="brand-logo">
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="servicios" class="services section-padding">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>Nuestros Servicios</h2>
-                <p>Especialistas en soluciones integrales para tu seguridad y la de tu vehículo.</p>
-            </div>
-
-            <div class="services-grid">
-                <!-- Servicio 1 -->
-                <div class="service-card reveal">
-                    <div class="icon-wrapper">
-                        <i class="fa-solid fa-house-chimney-window" aria-hidden="true"></i>
-                    </div>
-                    <h3>Hogar y Comercio</h3>
-                    <p>Aperturas de emergencia, cambio de combinaciones, instalación y reparación de cerraduras con la
-                        mejor tecnología.</p>
+        <!-- Appointments Form Section -->
+        <section id="turnos" class="appointments section-padding">
+            <div class="container appointments-container">
+                <div class="appointments-text reveal">
+                    <h2>Pedí tu turno <span class="highlight">rápidamente</span></h2>
+                    <p>Evitá demoras. Programá y asegurá tu turno para la copia o programación de llaves con chip de tu
+                        vehículo.</p>
+                    <ul class="check-list">
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Atención prioritaria sin esperas</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Asesoramiento profesional y técnico
+                        </li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Presupuesto anticipado garantizado</li>
+                    </ul>
                 </div>
+                <div class="appointments-form-wrapper glass-panel reveal delay-1">
+                    <form id="turno-form" class="turno-form">
+                        <div class="form-group">
+                            <label for="nombre">Nombre y Apellido</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="marca">Marca del Auto</label>
+                                <input type="text" id="marca" name="marca" placeholder="Ej: Volkswagen" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="modelo">Modelo / Año</label>
+                                <input type="text" id="modelo" name="modelo" placeholder="Ej: Gol Trend 2018" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicio">Servicio requerido</label>
+                            <select id="servicio" name="servicio" required>
+                                <option value="">Seleccione una opción...</option>
+                                <option value="Copia con chip">Copia con chip</option>
+                                <option value="Llave programada/Presencia">Llave programada / Presencia</option>
+                                <option value="Reparación de cerradura auto">Reparación de cerradura auto</option>
+                                <option value="Apertura (Urgencias)">Apertura de emergencia</option>
+                                <option value="Otro">Otro servicio</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Solicitar Turno Ahora</button>
+                    </form>
+                </div>
+            </div>
+        </section>
 
-                <!-- Servicio 2 -->
-                <div class="service-card featured reveal delay-1">
-                    <div class="icon-wrapper">
-                        <i class="fa-solid fa-car" aria-hidden="true"></i>
+        <!-- About Us Section -->
+        <section id="nosotros" class="about section-padding">
+            <div class="container about-container">
+                <div class="about-image reveal">
+                    <div class="image-wrapper" id="about-slider-container">
+                        <!-- Imágenes -->
+                        <img loading="lazy" src="assets/logo solo.webp" alt="Logo Cerrajería Agustín" class="about-slide-img active about-shield-logo">
+                        <img loading="lazy" src="assets/pictures/imagen_local_fuera.jpg" alt="Frente del local" class="about-slide-img">
+                        <img loading="lazy" src="assets/pictures/imagen_interior_cerrajeria.jpg" alt="Interior Cerrajería" class="about-slide-img">
+                        <img loading="lazy" src="assets/pictures/imagen_interior_cerrajeria_2.jpg" alt="Taller de Cerrajería" class="about-slide-img">
+                        <img loading="lazy" src="assets/pictures/imagen_cartel_calle.jpg" alt="Cartel en la calle" class="about-slide-img">
+
+                        <!-- Controles -->
+                        <button class="carousel-btn carousel-prev about-slider-btn" id="about-prev" aria-label="Foto Anterior">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn carousel-next about-slider-btn" id="about-next" aria-label="Foto Siguiente">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                        
+                        <!-- Dots -->
+                        <div class="about-dots" id="about-dots"></div>
                     </div>
-                    <h3>Cerrajería Automotriz</h3>
-                    <p>Especialistas en todas las marcas. Copias con chip, telemandos y llaves de presencia (Keyless).
+                </div>
+                <div class="about-content reveal delay-1">
+                    <div class="tag">Sobre Nosotros</div>
+                    <h2>Experiencia y <span class="highlight">Tecnología</span> a tu servicio</h2>
+                    <p class="lead">"En Cerrajería Agustín, somos referentes en seguridad y confianza en San Rafael."
                     </p>
-                </div>
+                    <p>Con años de experiencia, nos especializamos en soluciones integrales para el hogar y vehículos
+                        con
+                        tecnología de punta. Nuestro compromiso es tu tranquilidad, ofreciendo un servicio rápido,
+                        limpio y
+                        garantizado en cada apertura y programación que realizamos.</p>
 
-                <!-- Servicio 3 -->
-                <div class="service-card reveal delay-2">
-                    <div class="icon-wrapper">
-                        <i class="fa-solid fa-truck-fast" aria-hidden="true"></i>
-                    </div>
-                    <h3>Servicio a Domicilio</h3>
-                    <p>Cobertura total en todo San Rafael. Disponibilidad las 24 horas para urgencias, donde sea que te
-                        encuentres.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Offer Banner -->
-    <section class="offer-banner reveal">
-        <div class="container offer-content">
-            <div class="offer-text">
-                <h3><i class="fa-solid fa-percent" aria-hidden="true"></i> ¡Descuento especial por cantidad en copias de
-                    llaves!</h3>
-                <p>Consultanos por tu presupuesto personalizado y ahorrá garantizando copias de calidad.</p>
-            </div>
-            <a href="https://wa.me/5492604516569?text=Hola,%20me%20comunico%20desde%20la%20página%20web.%20Necesito..."
-                class="btn btn-white" target="_blank">Consultar Promo</a>
-        </div>
-    </section>
-
-    <!-- Appointments Form Section -->
-    <section id="turnos" class="appointments section-padding">
-        <div class="container appointments-container">
-            <div class="appointments-text reveal">
-                <h2>Pedí tu turno <span class="highlight">rápidamente</span></h2>
-                <p>Evitá demoras. Programá y asegurá tu turno para la copia o programación de llaves con chip de tu
-                    vehículo.</p>
-                <ul class="check-list">
-                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Atención prioritaria sin esperas</li>
-                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Asesoramiento profesional y técnico</li>
-                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Presupuesto anticipado garantizado</li>
-                </ul>
-            </div>
-            <div class="appointments-form-wrapper glass-panel reveal delay-1">
-                <form id="turno-form" class="turno-form">
-                    <div class="form-group">
-                        <label for="nombre">Nombre y Apellido</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="marca">Marca del Auto</label>
-                            <input type="text" id="marca" name="marca" placeholder="Ej: Volkswagen" required>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-text">Disponibilidad</div>
                         </div>
-                        <div class="form-group">
-                            <label for="modelo">Modelo / Año</label>
-                            <input type="text" id="modelo" name="modelo" placeholder="Ej: Gol Trend 2018" required>
+                        <div class="stat-item">
+                            <div class="stat-number">+2<span class="small">Años</span></div>
+                            <div class="stat-text">De Experiencia</div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="servicio">Servicio requerido</label>
-                        <select id="servicio" name="servicio" required>
-                            <option value="">Seleccione una opción...</option>
-                            <option value="Copia con chip">Copia con chip</option>
-                            <option value="Llave programada/Presencia">Llave programada / Presencia</option>
-                            <option value="Reparación de cerradura auto">Reparación de cerradura auto</option>
-                            <option value="Apertura (Urgencias)">Apertura de emergencia</option>
-                            <option value="Otro">Otro servicio</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block">Solicitar Turno Ahora</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section id="nosotros" class="about section-padding">
-        <div class="container about-container">
-            <div class="about-image reveal">
-                <div class="image-wrapper">
-                    <img loading="lazy" src="assets/logo solo.webp" alt="Logo Cerrajería Agustín" class="about-shield-logo">
-                </div>
-            </div>
-            <div class="about-content reveal delay-1">
-                <div class="tag">Sobre Nosotros</div>
-                <h2>Experiencia y <span class="highlight">Tecnología</span> a tu servicio</h2>
-                <p class="lead">"En Cerrajería Agustín, somos referentes en seguridad y confianza en San Rafael."</p>
-                <p>Con años de experiencia, nos especializamos en soluciones integrales para el hogar y vehículos con
-                    tecnología de punta. Nuestro compromiso es tu tranquilidad, ofreciendo un servicio rápido, limpio y
-                    garantizado en cada apertura y programación que realizamos.</p>
-
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-text">Disponibilidad</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">+2<span class="small">Años</span></div>
-                        <div class="stat-text">De Experiencia</div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonios" class="testimonials section-padding reveal">
-        <div class="container">
-            <div class="section-header">
-                <h2>Lo que dicen nuestros <span class="highlight">clientes</span></h2>
-                <p>Opiniones verificadas de Google Maps ⭐⭐⭐⭐⭐</p>
-            </div>
-
-            <div class="testimonials-carousel-wrapper">
-                <!-- Nav Buttons -->
-                <button class="carousel-btn carousel-prev" id="testimonial-prev" aria-label="Anterior">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                <button class="carousel-btn carousel-next" id="testimonial-next" aria-label="Siguiente">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-
-                <!-- Track -->
-                <div class="testimonials-track-container">
-                    <div class="testimonials-track" id="testimonials-track">
-
-                        <div class="testimonial-slide">
-                            <div class="tcard">
-                                <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
-                                <p class="tcard-text">Excelente atención del personal y muy buen trabajo. Recomendable
-                                    👌</p>
-                                <div class="tcard-stars">★★★★★</div>
-                                <div class="tcard-author">
-                                    <div class="tcard-avatar">L</div>
-                                    <div class="tcard-info">
-                                        <strong>Luciano Ganga</strong>
-                                        <span>Hace 4 meses · Google</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-slide">
-                            <div class="tcard">
-                                <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
-                                <p class="tcard-text">NO BUSQUEN MÁS, Cerrajería Agustín es LA CERRAJERÍA de San Rafael.
-                                    Excelente atención, predisposición y súper responsable.</p>
-                                <div class="tcard-stars">★★★★★</div>
-                                <div class="tcard-author">
-                                    <div class="tcard-avatar">R</div>
-                                    <div class="tcard-info">
-                                        <strong>Ricardo Portilla</strong>
-                                        <span>Hace 3 meses · Google</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-slide">
-                            <div class="tcard">
-                                <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
-                                <p class="tcard-text">Excelente servicio, el trabajo quedó de 10! Y muy buena atención.
-                                    Totalmente recomendable!</p>
-                                <div class="tcard-stars">★★★★★</div>
-                                <div class="tcard-author">
-                                    <div class="tcard-avatar">F</div>
-                                    <div class="tcard-info">
-                                        <strong>Fabio Cabrera</strong>
-                                        <span>2 semanas atrás · Google</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-slide">
-                            <div class="tcard">
-                                <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
-                                <p class="tcard-text">Muy buen servicio. Los llamé y vinieron en menos de media hora!
-                                    Trabajó rápido, con mucho profesionalismo y me dejó algunos consejitos de uso. Son
-                                    unos genios.</p>
-                                <div class="tcard-stars">★★★★★</div>
-                                <div class="tcard-author">
-                                    <div class="tcard-avatar">A</div>
-                                    <div class="tcard-info">
-                                        <strong>Antonella Frana</strong>
-                                        <span>Hace 3 meses · Google</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-slide">
-                            <div class="tcard">
-                                <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
-                                <p class="tcard-text">Excelente atención y precios! Los chicos además de agradables y
-                                    buena onda te orientan y dan tips, unos genios.</p>
-                                <div class="tcard-stars">★★★★★</div>
-                                <div class="tcard-author">
-                                    <div class="tcard-avatar">A</div>
-                                    <div class="tcard-info">
-                                        <strong>Ana María Calderón</strong>
-                                        <span>Hace 2 meses · Google</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-slide">
-                            <div class="tcard">
-                                <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
-                                <p class="tcard-text">Excelente atención, me hicieron 3 llaves en menos de 30 minutos.
-                                    Sigan adelante con su empresa que les va a ir muy bien!</p>
-                                <div class="tcard-stars">★★★★★</div>
-                                <div class="tcard-author">
-                                    <div class="tcard-avatar">C</div>
-                                    <div class="tcard-info">
-                                        <strong>Carlos Chavanne</strong>
-                                        <span>Hace 2 meses · Google</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-slide">
-                            <div class="tcard">
-                                <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
-                                <p class="tcard-text">Excelente servicio para llaves de auto con telecomando
-                                    codificadas. Atención amable y súper exprés. Gracias!</p>
-                                <div class="tcard-stars">★★★★★</div>
-                                <div class="tcard-author">
-                                    <div class="tcard-avatar">P</div>
-                                    <div class="tcard-info">
-                                        <strong>Patricia Nicolao</strong>
-                                        <span>Hace un mes · Google</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-slide">
-                            <div class="tcard">
-                                <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
-                                <p class="tcard-text">Excelente atención. Muy responsables y además rápidos y efectivos.
-                                    Precios adecuados. Para recomendar!</p>
-                                <div class="tcard-stars">★★★★★</div>
-                                <div class="tcard-author">
-                                    <div class="tcard-avatar">V</div>
-                                    <div class="tcard-info">
-                                        <strong>Viviana Garzuzi</strong>
-                                        <span>Hace 2 meses · Google</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-slide">
-                            <div class="tcard">
-                                <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
-                                <p class="tcard-text">Excelente servicio y atención! Súper rápidos. Recomiendo 🙌</p>
-                                <div class="tcard-stars">★★★★★</div>
-                                <div class="tcard-author">
-                                    <div class="tcard-avatar">A</div>
-                                    <div class="tcard-info">
-                                        <strong>Agustina Pieres</strong>
-                                        <span>Hace un mes · Google</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-slide">
-                            <div class="tcard">
-                                <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
-                                <p class="tcard-text">Excelente servicio! Súper rápidos y amables! Recomendables al
-                                    100%.</p>
-                                <div class="tcard-stars">★★★★★</div>
-                                <div class="tcard-author">
-                                    <div class="tcard-avatar">A</div>
-                                    <div class="tcard-info">
-                                        <strong>Analia Farruchi</strong>
-                                        <span>Hace un mes · Google</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+        <!-- Testimonials Section -->
+        <section id="testimonios" class="testimonials section-padding reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Lo que dicen nuestros <span class="highlight">clientes</span></h2>
+                    <p>Opiniones verificadas de Google Maps ⭐⭐⭐⭐⭐</p>
                 </div>
-            </div>
 
-            <!-- Dots -->
-            <div class="testimonials-dots" id="testimonials-dots"></div>
+                <div class="testimonials-carousel-wrapper">
+                    <!-- Nav Buttons -->
+                    <button class="carousel-btn carousel-prev" id="testimonial-prev" aria-label="Anterior">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn carousel-next" id="testimonial-next" aria-label="Siguiente">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
 
-            <div class="testimonials-cta">
-                <a href="https://maps.app.goo.gl/cTvYLtCei6GBtvhm7" target="_blank" class="btn btn-secondary">
-                    <i class="fa-brands fa-google" aria-hidden="true"></i> Ver todas en Google Maps
-                </a>
-            </div>
-        </div>
-    </section>
+                    <!-- Track -->
+                    <div class="testimonials-track-container">
+                        <div class="testimonials-track" id="testimonials-track">
 
+                            <div class="testimonial-slide">
+                                <div class="tcard">
+                                    <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
+                                    <p class="tcard-text">Excelente atención del personal y muy buen trabajo.
+                                        Recomendable
+                                        👌</p>
+                                    <div class="tcard-stars">★★★★★</div>
+                                    <div class="tcard-author">
+                                        <div class="tcard-avatar">L</div>
+                                        <div class="tcard-info">
+                                            <strong>Luciano Ganga</strong>
+                                            <span>Hace 4 meses · Google</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-    <!-- Location and Hours -->
-    <section id="ubicacion" class="location section-padding reveal">
-        <div class="container">
-            <div class="section-header">
-                <h2>Encontranos Fácilmente</h2>
-                <p>Visitá nuestro taller especializado o solicitá un móvil a domicilio.</p>
-            </div>
+                            <div class="testimonial-slide">
+                                <div class="tcard">
+                                    <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
+                                    <p class="tcard-text">NO BUSQUEN MÁS, Cerrajería Agustín es LA CERRAJERÍA de San
+                                        Rafael.
+                                        Excelente atención, predisposición y súper responsable.</p>
+                                    <div class="tcard-stars">★★★★★</div>
+                                    <div class="tcard-author">
+                                        <div class="tcard-avatar">R</div>
+                                        <div class="tcard-info">
+                                            <strong>Ricardo Portilla</strong>
+                                            <span>Hace 3 meses · Google</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-            <div class="location-grid">
-                <div class="info-panel glass-panel">
-                    <div class="info-group">
-                        <div class="info-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
-                        <div class="info-details">
-                            <h3>Nuestra Ubicación</h3>
-                            <p>Entre Ríos 599, San Rafael<br>Mendoza, Argentina</p>
-                        </div>
-                    </div>
+                            <div class="testimonial-slide">
+                                <div class="tcard">
+                                    <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
+                                    <p class="tcard-text">Excelente servicio, el trabajo quedó de 10! Y muy buena
+                                        atención.
+                                        Totalmente recomendable!</p>
+                                    <div class="tcard-stars">★★★★★</div>
+                                    <div class="tcard-author">
+                                        <div class="tcard-avatar">F</div>
+                                        <div class="tcard-info">
+                                            <strong>Fabio Cabrera</strong>
+                                            <span>2 semanas atrás · Google</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                    <div class="info-group">
-                        <div class="info-icon"><i class="fa-regular fa-clock" aria-hidden="true"></i></div>
-                        <div class="info-details">
-                            <h3>Horarios de Atención</h3>
-                            <ul class="hours-list">
-                                <li><span>Lunes a Viernes:</span> <span>08:30 - 13:30 hs<br>17:00 - 21:00 hs</span></li>
-                                <li><span>Sábados:</span> <span>08:30 - 13:30 hs<br>17:00 - 20:30 hs</span></li>
-                                <li><span>Domingos y Feriados:</span> <span class="highlight-text">Solo Urgencias</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                            <div class="testimonial-slide">
+                                <div class="tcard">
+                                    <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
+                                    <p class="tcard-text">Muy buen servicio. Los llamé y vinieron en menos de media
+                                        hora!
+                                        Trabajó rápido, con mucho profesionalismo y me dejó algunos consejitos de uso.
+                                        Son
+                                        unos genios.</p>
+                                    <div class="tcard-stars">★★★★★</div>
+                                    <div class="tcard-author">
+                                        <div class="tcard-avatar">A</div>
+                                        <div class="tcard-info">
+                                            <strong>Antonella Frana</strong>
+                                            <span>Hace 3 meses · Google</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                    <div class="info-group">
-                        <div class="info-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
-                        <div class="info-details">
-                            <h3>Contacto Directo</h3>
-                            <p><a href="tel:5492604516569">+54 9 260 451-6569</a></p>
+                            <div class="testimonial-slide">
+                                <div class="tcard">
+                                    <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
+                                    <p class="tcard-text">Excelente atención y precios! Los chicos además de agradables
+                                        y
+                                        buena onda te orientan y dan tips, unos genios.</p>
+                                    <div class="tcard-stars">★★★★★</div>
+                                    <div class="tcard-author">
+                                        <div class="tcard-avatar">A</div>
+                                        <div class="tcard-info">
+                                            <strong>Ana María Calderón</strong>
+                                            <span>Hace 2 meses · Google</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-slide">
+                                <div class="tcard">
+                                    <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
+                                    <p class="tcard-text">Excelente atención, me hicieron 3 llaves en menos de 30
+                                        minutos.
+                                        Sigan adelante con su empresa que les va a ir muy bien!</p>
+                                    <div class="tcard-stars">★★★★★</div>
+                                    <div class="tcard-author">
+                                        <div class="tcard-avatar">C</div>
+                                        <div class="tcard-info">
+                                            <strong>Carlos Chavanne</strong>
+                                            <span>Hace 2 meses · Google</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-slide">
+                                <div class="tcard">
+                                    <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
+                                    <p class="tcard-text">Excelente servicio para llaves de auto con telecomando
+                                        codificadas. Atención amable y súper exprés. Gracias!</p>
+                                    <div class="tcard-stars">★★★★★</div>
+                                    <div class="tcard-author">
+                                        <div class="tcard-avatar">P</div>
+                                        <div class="tcard-info">
+                                            <strong>Patricia Nicolao</strong>
+                                            <span>Hace un mes · Google</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-slide">
+                                <div class="tcard">
+                                    <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
+                                    <p class="tcard-text">Excelente atención. Muy responsables y además rápidos y
+                                        efectivos.
+                                        Precios adecuados. Para recomendar!</p>
+                                    <div class="tcard-stars">★★★★★</div>
+                                    <div class="tcard-author">
+                                        <div class="tcard-avatar">V</div>
+                                        <div class="tcard-info">
+                                            <strong>Viviana Garzuzi</strong>
+                                            <span>Hace 2 meses · Google</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-slide">
+                                <div class="tcard">
+                                    <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
+                                    <p class="tcard-text">Excelente servicio y atención! Súper rápidos. Recomiendo 🙌
+                                    </p>
+                                    <div class="tcard-stars">★★★★★</div>
+                                    <div class="tcard-author">
+                                        <div class="tcard-avatar">A</div>
+                                        <div class="tcard-info">
+                                            <strong>Agustina Pieres</strong>
+                                            <span>Hace un mes · Google</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-slide">
+                                <div class="tcard">
+                                    <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
+                                    <p class="tcard-text">Excelente servicio! Súper rápidos y amables! Recomendables al
+                                        100%.</p>
+                                    <div class="tcard-stars">★★★★★</div>
+                                    <div class="tcard-author">
+                                        <div class="tcard-avatar">A</div>
+                                        <div class="tcard-info">
+                                            <strong>Analia Farruchi</strong>
+                                            <span>Hace un mes · Google</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
 
-                <div class="map-container reveal delay-1">
-                    <iframe
-                        src="https://maps.google.com/maps?q=cerrajer%C3%ADa%20AGUST%C3%8DN%2024HS%20URGENCIAS.%20Entre%20R%C3%ADos%20599%2C%20San%20Rafael&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade" title="Mapa Cerrajería Agustín"></iframe>
+                <!-- Dots -->
+                <div class="testimonials-dots" id="testimonials-dots"></div>
+
+                <div class="testimonials-cta">
+                    <a href="https://maps.app.goo.gl/cTvYLtCei6GBtvhm7" target="_blank" class="btn btn-secondary">
+                        <i class="fa-brands fa-google" aria-hidden="true"></i> Ver todas en Google Maps
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Brands Carousel Section (Cerraduras) -->
-    <section class="brands-section lock-section" style="padding-top: 0; border-top: none;">
-        <div class="brands-marquee lock-brands">
-            <div class="brands-track reverse">
-                <!-- Logos de Cerraduras -->
-                <img loading="lazy" src="assets/brands/yale.webp" alt="Yale" class="brand-logo lock-brand">
-                <img loading="lazy" src="assets/brands/kallay.webp" alt="Kallay" class="brand-logo lock-brand">
-                <img loading="lazy" src="assets/brands/acytra.webp" alt="Acytra" class="brand-logo lock-brand">
-                <img loading="lazy" src="assets/brands/trabex.webp" alt="Trabex" class="brand-logo lock-brand">
-                <img loading="lazy" src="assets/brands/prive.webp" alt="Prive" class="brand-logo lock-brand">
-                <img loading="lazy" src="assets/brands/bronzen.webp" alt="Bronzen" class="brand-logo lock-brand">
-                <img loading="lazy" src="assets/brands/ROA-logo.webp" alt="ROA" class="brand-logo lock-brand">
-                <img loading="lazy" src="assets/brands/jma.webp" alt="JMA" class="brand-logo lock-brand">
-                <img loading="lazy" src="assets/brands/lupum.webp" alt="Lupum" class="brand-logo lock-brand">
-                <img loading="lazy" src="assets/brands/sekur.webp" alt="Sekur" class="brand-logo lock-brand">
-                <img loading="lazy" src="assets/brands/yaltres.webp" alt="Yaltres" class="brand-logo lock-brand">
-                <img loading="lazy" src="assets/brands/andif.webp" alt="Andif" class="brand-logo lock-brand">
-                <!-- Duplicado para efecto infinito -->
-                <img loading="lazy" src="assets/brands/yale.webp" alt="Yale" class="brand-logo lock-brand">
-                <img loading="lazy" src="assets/brands/kallay.webp" alt="Kallay" class="brand-logo lock-brand">
-                <img loading="lazy" src="assets/brands/acytra.webp" alt="Acytra" class="brand-logo lock-brand">
-                <img loading="lazy" src="assets/brands/trabex.webp" alt="Trabex" class="brand-logo lock-brand">
-                <img loading="lazy" src="assets/brands/prive.webp" alt="Prive" class="brand-logo lock-brand">
-                <img loading="lazy" src="assets/brands/bronzen.webp" alt="Bronzen" class="brand-logo lock-brand">
-                <img loading="lazy" src="assets/brands/ROA-logo.webp" alt="ROA" class="brand-logo lock-brand">
-                <img loading="lazy" src="assets/brands/jma.webp" alt="JMA" class="brand-logo lock-brand">
-                <img loading="lazy" src="assets/brands/lupum.webp" alt="Lupum" class="brand-logo lock-brand">
-                <img loading="lazy" src="assets/brands/sekur.webp" alt="Sekur" class="brand-logo lock-brand">
-                <img loading="lazy" src="assets/brands/yaltres.webp" alt="Yaltres" class="brand-logo lock-brand">
-                <img loading="lazy" src="assets/brands/andif.webp" alt="Andif" class="brand-logo lock-brand">
+
+        <!-- Location and Hours -->
+        <section id="ubicacion" class="location section-padding reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Encontranos Fácilmente</h2>
+                    <p>Visitá nuestro taller especializado o solicitá un móvil a domicilio.</p>
+                </div>
+
+                <div class="location-grid">
+                    <div class="info-panel glass-panel">
+                        <div class="info-group">
+                            <div class="info-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+                            <div class="info-details">
+                                <h3>Nuestra Ubicación</h3>
+                                <p>Entre Ríos 599, San Rafael<br>Mendoza, Argentina</p>
+                            </div>
+                        </div>
+
+                        <div class="info-group">
+                            <div class="info-icon"><i class="fa-regular fa-clock" aria-hidden="true"></i></div>
+                            <div class="info-details">
+                                <h3>Horarios de Atención</h3>
+                                <ul class="hours-list">
+                                    <li><span>Lunes a Viernes:</span> <span>08:30 - 13:30 hs<br>17:00 - 21:00 hs</span>
+                                    </li>
+                                    <li><span>Sábados:</span> <span>08:30 - 13:30 hs<br>17:00 - 20:30 hs</span></li>
+                                    <li><span>Domingos y Feriados:</span> <span class="highlight-text">Solo
+                                            Urgencias</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="info-group">
+                            <div class="info-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
+                            <div class="info-details">
+                                <h3>Contacto Directo</h3>
+                                <p><a href="tel:5492604516569">+54 9 260 451-6569</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="map-container reveal delay-1">
+                        <iframe
+                            src="https://maps.google.com/maps?q=cerrajer%C3%ADa%20AGUST%C3%8DN%2024HS%20URGENCIAS.%20Entre%20R%C3%ADos%20599%2C%20San%20Rafael&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade" title="Mapa Cerrajería Agustín"></iframe>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Brands Carousel Section (Cerraduras) -->
+        <section class="brands-section lock-section" style="padding-top: 0; border-top: none;">
+            <div class="brands-marquee lock-brands">
+                <div class="brands-track reverse">
+                    <!-- Logos de Cerraduras -->
+                    <img loading="lazy" src="assets/brands/yale.webp" alt="Yale" class="brand-logo lock-brand">
+                    <img loading="lazy" src="assets/brands/kallay.webp" alt="Kallay" class="brand-logo lock-brand">
+                    <img loading="lazy" src="assets/brands/acytra.webp" alt="Acytra" class="brand-logo lock-brand">
+                    <img loading="lazy" src="assets/brands/trabex.webp" alt="Trabex" class="brand-logo lock-brand">
+                    <img loading="lazy" src="assets/brands/prive.webp" alt="Prive" class="brand-logo lock-brand">
+                    <img loading="lazy" src="assets/brands/bronzen.webp" alt="Bronzen" class="brand-logo lock-brand">
+                    <img loading="lazy" src="assets/brands/ROA-logo.webp" alt="ROA" class="brand-logo lock-brand">
+                    <img loading="lazy" src="assets/brands/jma.webp" alt="JMA" class="brand-logo lock-brand">
+                    <img loading="lazy" src="assets/brands/lupum.webp" alt="Lupum" class="brand-logo lock-brand">
+                    <img loading="lazy" src="assets/brands/sekur.webp" alt="Sekur" class="brand-logo lock-brand">
+                    <img loading="lazy" src="assets/brands/yaltres.webp" alt="Yaltres" class="brand-logo lock-brand">
+                    <img loading="lazy" src="assets/brands/andif.webp" alt="Andif" class="brand-logo lock-brand">
+
+                </div>
+            </div>
+        </section>
 
     </main>
 
@@ -627,7 +632,8 @@
         <div class="container footer-container">
             <div class="footer-brand">
                 <a href="#inicio" aria-label="Volver al inicio" class="logo footer-logo">
-                    <img loading="lazy" src="assets/logo con nombre.webp" alt="Cerrajería Agustín" class="footer-logo-img">
+                    <img loading="lazy" src="assets/logo con nombre.webp" alt="Cerrajería Agustín"
+                        class="footer-logo-img">
                 </a>
                 <p>Referentes en cerrajería automotriz y del hogar en San Rafael, Mendoza.</p>
             </div>
@@ -637,9 +643,8 @@
                 <div class="social-links">
                     <a href="https://www.instagram.com/cerrajeria.agustin24hs/" target="_blank"
                         aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-                    <a href="https://www.facebook.com/search/top?q=cerrajeria%20san%20rafael%20cerrajer%C3%ADa%20agustin"
-                        target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"
-                            aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/share/1CMZHc9FZw/" target="_blank" aria-label="Facebook"><i
+                            class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
                     <a href="https://wa.me/5492604516569?text=Hola,%20me%20comunico%20desde%20la%20página%20web.%20Necesito..."
                         target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"
                             aria-hidden="true"></i></a>
@@ -653,22 +658,22 @@
 
     <!-- Floating Actions Buttons -->
     <div class="floating-actions">
-        <!-- Call Button Only visible on mobile -->
-        <a href="tel:+5492604516569" class="float-btn call-btn d-mobile-only" aria-label="Llamar Ahora">
+        <!-- Call Button -->
+        <a href="tel:+5492604516569" class="float-btn call-btn" aria-label="Llamar Urgencias 24hs">
             <i class="fa-solid fa-phone" aria-hidden="true"></i>
-            <span class="float-text">Llamar Ahora</span>
+            <span class="float-text">Urgencias 24hs</span>
         </a>
 
         <!-- WhatsApp Always Visible -->
-        <a href="https://wa.me/5492604516569?text=Hola,%20me%20comunico%20desde%20la%20página%20web.%20Necesito..."
-            class="float-btn wa-btn" target="_blank" aria-label="WhatsApp Urgencias 24hs">
+        <a href="https://wa.me/5492604516569?text=Hola,%20me%20comunico%20desde%20la%20página%20web.%20Tengo%20una%20consulta..."
+            class="float-btn wa-btn" target="_blank" aria-label="Consultas por WhatsApp">
             <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-            <span class="float-text">Urgencias 24hs</span>
+            <span class="float-text">Consultas</span>
         </a>
     </div>
 
     <!-- Script -->
-    
+
 </body>
 
 </html>

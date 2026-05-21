@@ -69,12 +69,18 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(response => response.json())
             .then(data => {
-                window.open(urlWA, '_blank');
+                showToast("¡Turno solicitado! Redirigiendo a WhatsApp...");
+                setTimeout(() => {
+                    window.location.href = urlWA;
+                }, 1500);
                 form.reset();
             })
             .catch(error => {
                 console.error('Error enviando email:', error);
-                window.open(urlWA, '_blank');
+                showToast("Redirigiendo a WhatsApp...");
+                setTimeout(() => {
+                    window.location.href = urlWA;
+                }, 1500);
                 form.reset();
             })
             .finally(() => {
@@ -210,4 +216,84 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     sections.forEach(sec => navObserver.observe(sec));
+
+    // ───── Infinite Marquee Cloner ─────
+    const marquees = document.querySelectorAll('.brands-track');
+    marquees.forEach(track => {
+        const logos = Array.from(track.children);
+        logos.forEach(logo => {
+            const clone = logo.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true');
+            track.appendChild(clone);
+        });
+    });
+    // ───── About Us Slider ─────
+    const aboutSlider = document.getElementById('about-slider-container');
+    if (aboutSlider) {
+        const slides = Array.from(aboutSlider.querySelectorAll('.about-slide-img'));
+        const prevBtn = document.getElementById('about-prev');
+        const nextBtn = document.getElementById('about-next');
+        const dotsContainer = document.getElementById('about-dots');
+        let current = 0;
+        let timer = null;
+        
+        slides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'about-dot' + (i === 0 ? ' active' : '');
+            dot.addEventListener('click', () => goTo(i));
+            dotsContainer.appendChild(dot);
+        });
+        const dots = Array.from(dotsContainer.querySelectorAll('.about-dot'));
+        
+        const goTo = (idx) => {
+            slides[current].classList.remove('active');
+            dots[current].classList.remove('active');
+            current = (idx + slides.length) % slides.length;
+            slides[current].classList.add('active');
+            dots[current].classList.add('active');
+        };
+        
+        const nextSlide = () => goTo(current + 1);
+        const prevSlide = () => goTo(current - 1);
+        
+        const startTimer = () => {
+            stopTimer();
+            timer = setInterval(nextSlide, 3500);
+        };
+        const stopTimer = () => clearInterval(timer);
+        
+        prevBtn?.addEventListener('click', () => { prevSlide(); startTimer(); });
+        nextBtn?.addEventListener('click', () => { nextSlide(); startTimer(); });
+        aboutSlider.addEventListener('mouseenter', stopTimer);
+        aboutSlider.addEventListener('mouseleave', startTimer);
+        
+        let touchStartX = 0;
+        aboutSlider.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+        aboutSlider.addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 50) { diff > 0 ? nextSlide() : prevSlide(); startTimer(); }
+        });
+
+        startTimer();
+    }
 });
+
+// ───── Toast Notification ─────
+function showToast(message) {
+    let toast = document.getElementById('toast-notification');
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'toast-notification';
+        toast.className = 'toast';
+        document.body.appendChild(toast);
+    }
+    toast.textContent = message;
+    
+    // Trigger reflow for animation
+    void toast.offsetWidth;
+    toast.classList.add('show');
+    
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 3000);
+}
