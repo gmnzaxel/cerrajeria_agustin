@@ -5,19 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cerrajería Agustín | San Rafael Mendoza</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="icon" type="image/webp" href="assets/favicon.webp">
-    <link rel="apple-touch-icon" href="assets/favicon.webp">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <meta name="theme-color" content="#FF2A2A">
     <!-- SEO and Meta Tags -->
     <meta name="description"
         content="Cerrajería Agustín en San Rafael, Mendoza. Especialistas en cerrajería automotriz, aperturas de urgencia, copias con chip y servicio a domicilio las 24 horas.">
     <!-- Open Graph / Redes Sociales -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tudominio.com.ar/">
+    <meta property="og:url" content="https://www.cerrajeriaagustin.com/">
     <meta property="og:title" content="Cerrajería Agustín | San Rafael Mendoza">
     <meta property="og:description"
         content="Especialistas en cerrajería automotriz, aperturas de urgencia y copias con chip. ¡Servicio 24 horas!">
-    <meta property="og:image" content="https://tudominio.com.ar/assets/hero_bg.webp">
+    <meta property="og:image" content="https://www.cerrajeriaagustin.com/assets/hero_bg_og.jpg">
     <!-- Preload -->
     <link rel="preload" as="image" href="assets/hero_bg.webp">
     <!-- Fonts -->
@@ -25,12 +26,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="script.js" defer></script>
 
     <!-- 🚀 SEO Local Avanzado (JSON-LD) para dominar Búsquedas en Google Maps y Google -->
@@ -39,9 +38,9 @@
       "@context": "https://schema.org",
       "@type": "Locksmith",
       "name": "Cerrajería Agustín 24HS",
-      "image": "https://tudominio.com.ar/assets/logo%20solo.webp",
-      "@id": "https://tudominio.com.ar/",
-      "url": "https://tudominio.com.ar/",
+      "image": "https://www.cerrajeriaagustin.com/assets/logo%20solo.webp",
+      "@id": "https://www.cerrajeriaagustin.com/",
+      "url": "https://www.cerrajeriaagustin.com/",
       "telephone": "+5492604516569",
       "priceRange": "$$",
       "description": "Especialistas en cerrajería automotriz, aperturas de urgencia, copias de llaves de autos y hogar. Servicio a domicilio en San Rafael. Urgencias las 24 horas.",
@@ -62,14 +61,14 @@
         {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "08:30",
-          "closes": "21:00"
+          "opens": "00:00",
+          "closes": "23:59",
         },
         {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": "Saturday",
-          "opens": "08:30",
-          "closes": "20:30"
+          "opens": "00:00",
+          "closes": "23:59",
         },
         {
           "@type": "OpeningHoursSpecification",
@@ -112,7 +111,8 @@
     <header id="navbar">
         <div class="container header-container">
             <a href="#inicio" aria-label="Volver al inicio" class="logo">
-                <img src="assets/logo solo nombre.webp" alt="Cerrajería Agustín Logo" class="navbar-logo">
+                <img width="728" height="172" src="assets/logo solo nombre.webp" alt="Cerrajería Agustín Logo"
+                    class="navbar-logo">
             </a>
 
             <nav class="nav-links">
@@ -138,18 +138,19 @@
             <div class="hero-overlay"></div>
             <div class="container hero-content">
                 <h1 class="hero-title">
-                    <img src="assets/logo con nombre.webp" alt="Cerrajería Agustín" class="hero-main-logo">
+                    <img width="728" height="517" src="assets/logo con nombre.webp" alt="Cerrajería Agustín"
+                        class="hero-main-logo">
                     <span class="highlight">Seguridad y Confianza en San
                         Rafael</span>
                 </h1>
                 <p class="hero-subtitle">Soluciones rápidas en aperturas, copias de llaves y programación automotriz.
                     ¡Llegamos a donde estés!</p>
                 <div class="hero-buttons">
-                    <a href="tel:+5492604516569" class="btn btn-primary btn-glow">
+                    <a href="#" class="btn btn-primary btn-glow js-contact-tel">
                         <i class="fa-solid fa-phone" aria-hidden="true"></i> Urgencias 24hs
                     </a>
-                    <a href="https://wa.me/5492604516569?text=Hola,%20me%20comunico%20desde%20la%20página%20web.%20Tengo%20una%20consulta..."
-                        class="btn btn-secondary" target="_blank">
+                    <a href="#" class="btn btn-secondary js-contact-wa"
+                        data-wa-text="Hola, me comunico desde la página web. Tengo una consulta..." target="_blank">
                         <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Consultas
                     </a>
                 </div>
@@ -166,26 +167,46 @@
             <div class="brands-marquee auto-brands">
                 <div class="brands-track">
                     <!-- Logos de Marcas Automotrices -->
-                    <img loading="lazy" src="assets/brands/audi.webp" alt="Audi" class="brand-logo">
-                    <img loading="lazy" src="assets/brands/bmw.webp" alt="BMW" class="brand-logo">
-                    <img loading="lazy" src="assets/brands/chevrolet.webp" alt="Chevrolet" class="brand-logo">
-                    <img loading="lazy" src="assets/brands/citroen.webp" alt="Citroen" class="brand-logo">
-                    <img loading="lazy" src="assets/brands/dodge.webp" alt="Dodge" class="brand-logo">
-                    <img loading="lazy" src="assets/brands/fiat.webp" alt="Fiat" class="brand-logo">
-                    <img loading="lazy" src="assets/brands/ford.webp" alt="Ford" class="brand-logo">
-                    <img loading="lazy" src="assets/brands/honda.webp" alt="Honda" class="brand-logo">
-                    <img loading="lazy" src="assets/brands/hyundai.webp" alt="Hyundai" class="brand-logo">
-                    <img loading="lazy" src="assets/brands/jeep.webp" alt="Jeep" class="brand-logo">
-                    <img loading="lazy" src="assets/brands/kia.webp" alt="Kia" class="brand-logo">
-                    <img loading="lazy" src="assets/brands/landrover.webp" alt="Land Rover" class="brand-logo">
-                    <img loading="lazy" src="assets/brands/mercedes.webp" alt="Mercedes" class="brand-logo">
-                    <img loading="lazy" src="assets/brands/mitsubishi.webp" alt="Mitsubishi" class="brand-logo">
-                    <img loading="lazy" src="assets/brands/nissan.webp" alt="Nissan" class="brand-logo">
-                    <img loading="lazy" src="assets/brands/peugeot.webp" alt="Peugeot" class="brand-logo">
-                    <img loading="lazy" src="assets/brands/renault.webp" alt="Renault" class="brand-logo">
-                    <img loading="lazy" src="assets/brands/suzuki.webp" alt="Suzuki" class="brand-logo">
-                    <img loading="lazy" src="assets/brands/toyota.webp" alt="Toyota" class="brand-logo">
-                    <img loading="lazy" src="assets/brands/volkswagen.webp" alt="Volkswagen" class="brand-logo">
+                    <img width="555" height="160" loading="lazy" src="assets/brands/audi.webp" alt="Audi"
+                        class="brand-logo">
+                    <img width="1033" height="1033" loading="lazy" src="assets/brands/bmw.webp" alt="BMW"
+                        class="brand-logo">
+                    <img width="1964" height="769" loading="lazy" src="assets/brands/chevrolet.webp" alt="Chevrolet"
+                        class="brand-logo">
+                    <img width="500" height="352" loading="lazy" src="assets/brands/citroen.webp" alt="Citroen"
+                        class="brand-logo">
+                    <img width="2268" height="1688" loading="lazy" src="assets/brands/dodge.webp" alt="Dodge"
+                        class="brand-logo">
+                    <img width="2400" height="2400" loading="lazy" src="assets/brands/fiat.webp" alt="Fiat"
+                        class="brand-logo">
+                    <img width="3840" height="2881" loading="lazy" src="assets/brands/ford.webp" alt="Ford"
+                        class="brand-logo">
+                    <img width="1156" height="942" loading="lazy" src="assets/brands/honda.webp" alt="Honda"
+                        class="brand-logo">
+                    <img width="2650" height="1440" loading="lazy" src="assets/brands/hyundai.webp" alt="Hyundai"
+                        class="brand-logo">
+                    <img width="2000" height="1125" loading="lazy" src="assets/brands/jeep.webp" alt="Jeep"
+                        class="brand-logo">
+                    <img width="1124" height="573" loading="lazy" src="assets/brands/kia.webp" alt="Kia"
+                        class="brand-logo">
+                    <img width="500" height="500" loading="lazy" src="assets/brands/landrover.webp" alt="Land Rover"
+                        class="brand-logo">
+                    <img width="256" height="256" loading="lazy" src="assets/brands/mercedes.webp" alt="Mercedes"
+                        class="brand-logo">
+                    <img width="4000" height="4000" loading="lazy" src="assets/brands/mitsubishi.webp" alt="Mitsubishi"
+                        class="brand-logo">
+                    <img width="1920" height="1080" loading="lazy" src="assets/brands/nissan.webp" alt="Nissan"
+                        class="brand-logo">
+                    <img width="1336" height="1444" loading="lazy" src="assets/brands/peugeot.webp" alt="Peugeot"
+                        class="brand-logo">
+                    <img width="2048" height="2048" loading="lazy" src="assets/brands/renault.webp" alt="Renault"
+                        class="brand-logo">
+                    <img width="1899" height="2191" loading="lazy" src="assets/brands/suzuki.webp" alt="Suzuki"
+                        class="brand-logo">
+                    <img width="840" height="768" loading="lazy" src="assets/brands/toyota.webp" alt="Toyota"
+                        class="brand-logo">
+                    <img width="860" height="863" loading="lazy" src="assets/brands/volkswagen.webp" alt="Volkswagen"
+                        class="brand-logo">
 
                 </div>
             </div>
@@ -244,8 +265,9 @@
                         llaves!</h3>
                     <p>Consultanos por tu presupuesto personalizado y ahorrá garantizando copias de calidad.</p>
                 </div>
-                <a href="https://wa.me/5492604516569?text=Hola,%20me%20comunico%20desde%20la%20página%20web.%20Necesito..."
-                    class="btn btn-white" target="_blank">Consultar Promo</a>
+                <a href="#" class="btn btn-white js-contact-wa"
+                    data-wa-text="Hola, me comunico desde la página web. Necesito..." target="_blank">Consultar
+                    Promo</a>
             </div>
         </section>
 
@@ -265,6 +287,9 @@
                 </div>
                 <div class="appointments-form-wrapper glass-panel reveal delay-1">
                     <form id="turno-form" class="turno-form">
+                        <!-- Honeypot anti-spam -->
+                        <input type="text" name="_honey" id="_honey" style="display:none" tabindex="-1"
+                            autocomplete="off">
                         <div class="form-group">
                             <label for="nombre">Nombre y Apellido</label>
                             <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
@@ -302,20 +327,29 @@
                 <div class="about-image reveal">
                     <div class="image-wrapper" id="about-slider-container">
                         <!-- Imágenes -->
-                        <img loading="lazy" src="assets/logo solo.webp" alt="Logo Cerrajería Agustín" class="about-slide-img active about-shield-logo">
-                        <img loading="lazy" src="assets/pictures/imagen_local_fuera.jpg" alt="Frente del local" class="about-slide-img">
-                        <img loading="lazy" src="assets/pictures/imagen_interior_cerrajeria.jpg" alt="Interior Cerrajería" class="about-slide-img">
-                        <img loading="lazy" src="assets/pictures/imagen_interior_cerrajeria_2.jpg" alt="Taller de Cerrajería" class="about-slide-img">
-                        <img loading="lazy" src="assets/pictures/imagen_cartel_calle.jpg" alt="Cartel en la calle" class="about-slide-img">
+                        <img width="529" height="264" loading="lazy" src="assets/logo solo.webp"
+                            alt="Logo Cerrajería Agustín" class="about-slide-img active about-shield-logo">
+                        <img width="3000" height="4000" loading="lazy" src="assets/pictures/imagen_local_fuera.webp"
+                            alt="Frente del local" class="about-slide-img">
+                        <img width="3000" height="4000" loading="lazy"
+                            src="assets/pictures/imagen_interior_cerrajeria.webp" alt="Interior Cerrajería"
+                            class="about-slide-img">
+                        <img width="3000" height="4000" loading="lazy"
+                            src="assets/pictures/imagen_interior_cerrajeria_2.webp" alt="Taller de Cerrajería"
+                            class="about-slide-img">
+                        <img width="3000" height="4000" loading="lazy" src="assets/pictures/imagen_cartel_calle.webp"
+                            alt="Cartel en la calle" class="about-slide-img">
 
                         <!-- Controles -->
-                        <button class="carousel-btn carousel-prev about-slider-btn" id="about-prev" aria-label="Foto Anterior">
+                        <button class="carousel-btn carousel-prev about-slider-btn" id="about-prev"
+                            aria-label="Foto Anterior">
                             <i class="fa-solid fa-chevron-left"></i>
                         </button>
-                        <button class="carousel-btn carousel-next about-slider-btn" id="about-next" aria-label="Foto Siguiente">
+                        <button class="carousel-btn carousel-next about-slider-btn" id="about-next"
+                            aria-label="Foto Siguiente">
                             <i class="fa-solid fa-chevron-right"></i>
                         </button>
-                        
+
                         <!-- Dots -->
                         <div class="about-dots" id="about-dots"></div>
                     </div>
@@ -588,7 +622,7 @@
                             <div class="info-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
                             <div class="info-details">
                                 <h3>Contacto Directo</h3>
-                                <p><a href="tel:5492604516569">+54 9 260 451-6569</a></p>
+                                <p><a href="#" class="js-contact-tel js-contact-tel-text">Cargando...</a></p>
                             </div>
                         </div>
                     </div>
@@ -608,18 +642,30 @@
             <div class="brands-marquee lock-brands">
                 <div class="brands-track reverse">
                     <!-- Logos de Cerraduras -->
-                    <img loading="lazy" src="assets/brands/yale.webp" alt="Yale" class="brand-logo lock-brand">
-                    <img loading="lazy" src="assets/brands/kallay.webp" alt="Kallay" class="brand-logo lock-brand">
-                    <img loading="lazy" src="assets/brands/acytra.webp" alt="Acytra" class="brand-logo lock-brand">
-                    <img loading="lazy" src="assets/brands/trabex.webp" alt="Trabex" class="brand-logo lock-brand">
-                    <img loading="lazy" src="assets/brands/prive.webp" alt="Prive" class="brand-logo lock-brand">
-                    <img loading="lazy" src="assets/brands/bronzen.webp" alt="Bronzen" class="brand-logo lock-brand">
-                    <img loading="lazy" src="assets/brands/ROA-logo.webp" alt="ROA" class="brand-logo lock-brand">
-                    <img loading="lazy" src="assets/brands/jma.webp" alt="JMA" class="brand-logo lock-brand">
-                    <img loading="lazy" src="assets/brands/lupum.webp" alt="Lupum" class="brand-logo lock-brand">
-                    <img loading="lazy" src="assets/brands/sekur.webp" alt="Sekur" class="brand-logo lock-brand">
-                    <img loading="lazy" src="assets/brands/yaltres.webp" alt="Yaltres" class="brand-logo lock-brand">
-                    <img loading="lazy" src="assets/brands/andif.webp" alt="Andif" class="brand-logo lock-brand">
+                    <img width="4096" height="4095" loading="lazy" src="assets/brands/yale.webp" alt="Yale"
+                        class="brand-logo lock-brand">
+                    <img width="447" height="176" loading="lazy" src="assets/brands/kallay.webp" alt="Kallay"
+                        class="brand-logo lock-brand">
+                    <img width="1080" height="1200" loading="lazy" src="assets/brands/acytra.webp" alt="Acytra"
+                        class="brand-logo lock-brand">
+                    <img width="591" height="209" loading="lazy" src="assets/brands/trabex.webp" alt="Trabex"
+                        class="brand-logo lock-brand">
+                    <img width="1024" height="376" loading="lazy" src="assets/brands/prive.webp" alt="Prive"
+                        class="brand-logo lock-brand">
+                    <img width="1024" height="401" loading="lazy" src="assets/brands/bronzen.webp" alt="Bronzen"
+                        class="brand-logo lock-brand">
+                    <img width="1370" height="541" loading="lazy" src="assets/brands/ROA-logo.webp" alt="ROA"
+                        class="brand-logo lock-brand">
+                    <img width="377" height="128" loading="lazy" src="assets/brands/jma.webp" alt="JMA"
+                        class="brand-logo lock-brand">
+                    <img width="591" height="209" loading="lazy" src="assets/brands/lupum.webp" alt="Lupum"
+                        class="brand-logo lock-brand">
+                    <img width="452" height="126" loading="lazy" src="assets/brands/sekur.webp" alt="Sekur"
+                        class="brand-logo lock-brand">
+                    <img width="575" height="230" loading="lazy" src="assets/brands/yaltres.webp" alt="Yaltres"
+                        class="brand-logo lock-brand">
+                    <img width="258" height="196" loading="lazy" src="assets/brands/andif.webp" alt="Andif"
+                        class="brand-logo lock-brand">
 
                 </div>
             </div>
@@ -632,8 +678,8 @@
         <div class="container footer-container">
             <div class="footer-brand">
                 <a href="#inicio" aria-label="Volver al inicio" class="logo footer-logo">
-                    <img loading="lazy" src="assets/logo con nombre.webp" alt="Cerrajería Agustín"
-                        class="footer-logo-img">
+                    <img width="728" height="517" loading="lazy" src="assets/logo con nombre.webp"
+                        alt="Cerrajería Agustín" class="footer-logo-img">
                 </a>
                 <p>Referentes en cerrajería automotriz y del hogar en San Rafael, Mendoza.</p>
             </div>
@@ -645,7 +691,7 @@
                         aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
                     <a href="https://www.facebook.com/share/1CMZHc9FZw/" target="_blank" aria-label="Facebook"><i
                             class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
-                    <a href="https://wa.me/5492604516569?text=Hola,%20me%20comunico%20desde%20la%20página%20web.%20Necesito..."
+                    <a href="#" class="js-contact-wa" data-wa-text="Hola, me comunico desde la página web. Necesito..."
                         target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"
                             aria-hidden="true"></i></a>
                 </div>
@@ -659,14 +705,15 @@
     <!-- Floating Actions Buttons -->
     <div class="floating-actions">
         <!-- Call Button -->
-        <a href="tel:+5492604516569" class="float-btn call-btn" aria-label="Llamar Urgencias 24hs">
+        <a href="#" class="float-btn call-btn js-contact-tel" aria-label="Llamar Urgencias 24hs">
             <i class="fa-solid fa-phone" aria-hidden="true"></i>
             <span class="float-text">Urgencias 24hs</span>
         </a>
 
         <!-- WhatsApp Always Visible -->
-        <a href="https://wa.me/5492604516569?text=Hola,%20me%20comunico%20desde%20la%20página%20web.%20Tengo%20una%20consulta..."
-            class="float-btn wa-btn" target="_blank" aria-label="Consultas por WhatsApp">
+        <a href="#" class="float-btn wa-btn js-contact-wa"
+            data-wa-text="Hola, me comunico desde la página web. Tengo una consulta..." target="_blank"
+            aria-label="Consultas por WhatsApp">
             <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
             <span class="float-text">Consultas</span>
         </a>

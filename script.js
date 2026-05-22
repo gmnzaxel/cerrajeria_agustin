@@ -1,8 +1,45 @@
+// 1. Configuración Global
+const CONFIG = {
+    phone: "5492604516569", // Número de WhatsApp y llamadas
+    formattedPhone: "+54 9 260 451-6569" // Formato visual para mostrar en la web
+};
+
+// 2. Inicialización
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile menu toggle
+    initContactLinks();
+    initMobileMenu();
+    initScrollHeader();
+    initFormSubmit();
+    initTestimonials();
+    initScrollReveal();
+    initActiveMenu();
+    initInfiniteMarquee();
+    initAboutSlider();
+});
+
+// 3. Funciones Modulares
+
+function initContactLinks() {
+    const waLinks = document.querySelectorAll('.js-contact-wa');
+    waLinks.forEach(link => {
+        const text = link.getAttribute('data-wa-text') || '';
+        link.href = `https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(text)}`;
+    });
+
+    const telLinks = document.querySelectorAll('.js-contact-tel');
+    telLinks.forEach(link => {
+        link.href = `tel:+${CONFIG.phone}`;
+    });
+
+    const telTexts = document.querySelectorAll('.js-contact-tel-text');
+    telTexts.forEach(el => {
+        el.textContent = CONFIG.formattedPhone;
+    });
+}
+
+function initMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
-    const header = document.querySelector('header');
     const body = document.body;
 
     if (hamburger) {
@@ -13,16 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Scroll Header Background
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-
-    // Close menu when clicking a link
     document.querySelectorAll('.nav-links a').forEach(anchor => {
         anchor.addEventListener('click', function () {
             if (navLinks.classList.contains('active')) {
@@ -32,154 +59,172 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+}
 
-    // Handle Form Submit: WhatsApp + Email
+function initScrollHeader() {
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+}
+
+function initFormSubmit() {
     const form = document.getElementById('turno-form');
-    if (form) {
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            
-            const btnSubmit = form.querySelector('button[type="submit"]');
-            const btnOriginalText = btnSubmit.innerHTML;
-            btnSubmit.innerHTML = 'Enviando...';
-            btnSubmit.disabled = true;
+    if (!form) return;
 
-            const nombre = document.getElementById('nombre').value;
-            const marca = document.getElementById('marca').value;
-            const modelo = document.getElementById('modelo').value;
-            const servicio = document.getElementById('servicio').value;
-            
-            // 1. Prepare WhatsApp Message
-            const mensajeWA = `¡Hola Agustín! Quisiera solicitar un turno.%0A%0A*📌 Mis datos:*%0A- *Nombre:* ${nombre}%0A- *Vehículo:* ${marca} ${modelo}%0A- *Servicio:* ${servicio}`;
-            const urlWA = `https://wa.me/5492604516569?text=${mensajeWA}`;
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        
+        const btnSubmit = form.querySelector('button[type="submit"]');
+        const btnOriginalText = btnSubmit.innerHTML;
+        btnSubmit.innerHTML = 'Enviando...';
+        btnSubmit.disabled = true;
 
-            // 2. Send Email via FormSubmit AJAX
-            fetch("https://formsubmit.co/ajax/agustinfernandezsuchovsky@gmail.com", {
-                method: "POST",
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({
-                    Nombre: nombre,
-                    Vehículo: `${marca} ${modelo}`,
-                    Servicio: servicio,
-                    _subject: "¡Nuevo turno desde la web!"
-                })
+        const nombre = document.getElementById('nombre').value;
+        const marca = document.getElementById('marca').value;
+        const modelo = document.getElementById('modelo').value;
+        const servicio = document.getElementById('servicio').value;
+        const honey = document.getElementById('_honey')?.value;
+
+        // Anti-spam honeypot
+        if (honey) {
+            console.warn('Spam detectado y bloqueado.');
+            form.reset();
+            btnSubmit.innerHTML = btnOriginalText;
+            btnSubmit.disabled = false;
+            return;
+        }
+        
+        const mensajeWA = `¡Hola Agustín! Quisiera solicitar un turno.\n\n*📌 Mis datos:*\n- *Nombre:* ${nombre}\n- *Vehículo:* ${marca} ${modelo}\n- *Servicio:* ${servicio}`;
+        const urlWA = `https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(mensajeWA)}`;
+
+        // Ofuscamos el email
+        const targetEmail = "agustinfernandezsuchovsky" + "@" + "gmail.com";
+        fetch(`https://formsubmit.co/ajax/${targetEmail}`, {
+            method: "POST",
+            headers: { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                Nombre: nombre,
+                Vehículo: `${marca} ${modelo}`,
+                Servicio: servicio,
+                _subject: "¡Nuevo turno desde la web!"
             })
-            .then(response => response.json())
-            .then(data => {
-                showToast("¡Turno solicitado! Redirigiendo a WhatsApp...");
-                setTimeout(() => {
-                    window.location.href = urlWA;
-                }, 1500);
-                form.reset();
-            })
-            .catch(error => {
-                console.error('Error enviando email:', error);
-                showToast("Redirigiendo a WhatsApp...");
-                setTimeout(() => {
-                    window.location.href = urlWA;
-                }, 1500);
-                form.reset();
-            })
-            .finally(() => {
-                btnSubmit.innerHTML = btnOriginalText;
-                btnSubmit.disabled = false;
-            });
+        })
+        .then(response => response.json())
+        .then(data => {
+            showToast("¡Turno solicitado! Redirigiendo a WhatsApp...");
+            setTimeout(() => {
+                window.location.href = urlWA;
+            }, 2000);
+            form.reset();
+        })
+        .catch(error => {
+            console.error('Error enviando email:', error);
+            showToast("Error al enviar. Por favor, confírmalo directo en WhatsApp.");
+            setTimeout(() => {
+                window.location.href = urlWA;
+            }, 3000);
+            form.reset();
+        })
+        .finally(() => {
+            btnSubmit.innerHTML = btnOriginalText;
+            btnSubmit.disabled = false;
         });
-    }
+    });
+}
 
-    // ───── Testimonials Carousel ─────
+function initTestimonials() {
     const track = document.getElementById('testimonials-track');
     const dotsContainer = document.getElementById('testimonials-dots');
     const prevBtn = document.getElementById('testimonial-prev');
     const nextBtn = document.getElementById('testimonial-next');
 
-    if (track) {
-        const slides = Array.from(track.querySelectorAll('.testimonial-slide'));
-        const total = slides.length;
-        let current = 0;
-        let autoTimer = null;
+    if (!track) return;
 
-        // Build dots (1 per slide)
-        const buildDots = () => {
-            if (!dotsContainer) return;
-            dotsContainer.innerHTML = '';
-            slides.forEach((_, i) => {
-                const dot = document.createElement('button');
-                dot.className = 't-dot' + (i === 0 ? ' active' : '');
-                dot.setAttribute('aria-label', `Reseña ${i + 1}`);
-                dot.addEventListener('click', () => goTo(i));
-                dotsContainer.appendChild(dot);
-            });
-        };
+    const slides = Array.from(track.querySelectorAll('.testimonial-slide'));
+    const total = slides.length;
+    let current = 0;
+    let autoTimer = null;
 
-        const updateDots = () => {
-            if (!dotsContainer) return;
-            dotsContainer.querySelectorAll('.t-dot').forEach((d, i) => {
-                d.classList.toggle('active', i === current);
-            });
-        };
-
-        const goTo = (idx) => {
-            current = (idx + total) % total;
-            const prevIdx = (current - 1 + total) % total;
-            const nextIdx = (current + 1) % total;
-
-            // Assign coverflow classes
-            slides.forEach((s, i) => {
-                s.className = 'testimonial-slide';
-                if (i === current) s.classList.add('active');
-                else if (i === prevIdx) s.classList.add('prev');
-                else if (i === nextIdx) s.classList.add('next');
-            });
-            
-            updateDots();
-        };
-
-        const next = () => goTo(current + 1);
-        const prev = () => goTo(current - 1);
-
-        const startAuto = () => {
-            stopAuto();
-            autoTimer = setInterval(next, 4500);
-        };
-
-        const stopAuto = () => {
-            if (autoTimer) clearInterval(autoTimer);
-        };
-
-        // Events
-        prevBtn?.addEventListener('click', () => { prev(); startAuto(); });
-        nextBtn?.addEventListener('click', () => { next(); startAuto(); });
-
-        track.addEventListener('mouseenter', stopAuto);
-        track.addEventListener('mouseleave', startAuto);
-
-        // Click on blurred slides
-        slides.forEach(s => {
-            s.addEventListener('click', () => {
-                if (s.classList.contains('prev')) { prev(); startAuto(); }
-                if (s.classList.contains('next')) { next(); startAuto(); }
-            });
+    const buildDots = () => {
+        if (!dotsContainer) return;
+        dotsContainer.innerHTML = '';
+        slides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = 't-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', `Reseña ${i + 1}`);
+            dot.addEventListener('click', () => goTo(i));
+            dotsContainer.appendChild(dot);
         });
+    };
 
-        // Touch swipe
-        let touchStartX = 0;
-        track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-        track.addEventListener('touchend', e => {
-            const diff = touchStartX - e.changedTouches[0].clientX;
-            if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); startAuto(); }
+    const updateDots = () => {
+        if (!dotsContainer) return;
+        dotsContainer.querySelectorAll('.t-dot').forEach((d, i) => {
+            d.classList.toggle('active', i === current);
         });
+    };
 
-        // Init
-        buildDots();
-        goTo(0);
-        startAuto();
-    }
+    const goTo = (idx) => {
+        current = (idx + total) % total;
+        const prevIdx = (current - 1 + total) % total;
+        const nextIdx = (current + 1) % total;
 
-    // ───── Scroll Reveal ─────
+        slides.forEach((s, i) => {
+            s.className = 'testimonial-slide';
+            if (i === current) s.classList.add('active');
+            else if (i === prevIdx) s.classList.add('prev');
+            else if (i === nextIdx) s.classList.add('next');
+        });
+        
+        updateDots();
+    };
+
+    const next = () => goTo(current + 1);
+    const prev = () => goTo(current - 1);
+
+    const startAuto = () => {
+        stopAuto();
+        autoTimer = setInterval(next, 4500);
+    };
+
+    const stopAuto = () => {
+        if (autoTimer) clearInterval(autoTimer);
+    };
+
+    prevBtn?.addEventListener('click', () => { prev(); startAuto(); });
+    nextBtn?.addEventListener('click', () => { next(); startAuto(); });
+
+    track.addEventListener('mouseenter', stopAuto);
+    track.addEventListener('mouseleave', startAuto);
+
+    slides.forEach(s => {
+        s.addEventListener('click', () => {
+            if (s.classList.contains('prev')) { prev(); startAuto(); }
+            if (s.classList.contains('next')) { next(); startAuto(); }
+        });
+    });
+
+    let touchStartX = 0;
+    track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', e => {
+        const diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); startAuto(); }
+    });
+
+    buildDots();
+    goTo(0);
+    startAuto();
+}
+
+function initScrollReveal() {
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -193,8 +238,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+}
 
-    // ───── Active Menu Highlight ─────
+function initActiveMenu() {
     const sections = document.querySelectorAll('section[id]');
     const navItems = document.querySelectorAll('.nav-links a');
 
@@ -211,13 +257,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.3, // Require 30% of section visible to trigger
+        threshold: 0.3,
         rootMargin: "-20% 0px -60% 0px"
     });
 
     sections.forEach(sec => navObserver.observe(sec));
+}
 
-    // ───── Infinite Marquee Cloner ─────
+function initInfiniteMarquee() {
     const marquees = document.querySelectorAll('.brands-track');
     marquees.forEach(track => {
         const logos = Array.from(track.children);
@@ -227,56 +274,58 @@ document.addEventListener('DOMContentLoaded', () => {
             track.appendChild(clone);
         });
     });
-    // ───── About Us Slider ─────
-    const aboutSlider = document.getElementById('about-slider-container');
-    if (aboutSlider) {
-        const slides = Array.from(aboutSlider.querySelectorAll('.about-slide-img'));
-        const prevBtn = document.getElementById('about-prev');
-        const nextBtn = document.getElementById('about-next');
-        const dotsContainer = document.getElementById('about-dots');
-        let current = 0;
-        let timer = null;
-        
-        slides.forEach((_, i) => {
-            const dot = document.createElement('button');
-            dot.className = 'about-dot' + (i === 0 ? ' active' : '');
-            dot.addEventListener('click', () => goTo(i));
-            dotsContainer.appendChild(dot);
-        });
-        const dots = Array.from(dotsContainer.querySelectorAll('.about-dot'));
-        
-        const goTo = (idx) => {
-            slides[current].classList.remove('active');
-            dots[current].classList.remove('active');
-            current = (idx + slides.length) % slides.length;
-            slides[current].classList.add('active');
-            dots[current].classList.add('active');
-        };
-        
-        const nextSlide = () => goTo(current + 1);
-        const prevSlide = () => goTo(current - 1);
-        
-        const startTimer = () => {
-            stopTimer();
-            timer = setInterval(nextSlide, 3500);
-        };
-        const stopTimer = () => clearInterval(timer);
-        
-        prevBtn?.addEventListener('click', () => { prevSlide(); startTimer(); });
-        nextBtn?.addEventListener('click', () => { nextSlide(); startTimer(); });
-        aboutSlider.addEventListener('mouseenter', stopTimer);
-        aboutSlider.addEventListener('mouseleave', startTimer);
-        
-        let touchStartX = 0;
-        aboutSlider.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-        aboutSlider.addEventListener('touchend', e => {
-            const diff = touchStartX - e.changedTouches[0].clientX;
-            if (Math.abs(diff) > 50) { diff > 0 ? nextSlide() : prevSlide(); startTimer(); }
-        });
+}
 
-        startTimer();
-    }
-});
+function initAboutSlider() {
+    const aboutSlider = document.getElementById('about-slider-container');
+    if (!aboutSlider) return;
+
+    const slides = Array.from(aboutSlider.querySelectorAll('.about-slide-img'));
+    const prevBtn = document.getElementById('about-prev');
+    const nextBtn = document.getElementById('about-next');
+    const dotsContainer = document.getElementById('about-dots');
+    let current = 0;
+    let timer = null;
+    
+    slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'about-dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+    });
+    const dots = Array.from(dotsContainer.querySelectorAll('.about-dot'));
+    
+    const goTo = (idx) => {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = (idx + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+    };
+    
+    const nextSlide = () => goTo(current + 1);
+    const prevSlide = () => goTo(current - 1);
+    
+    const startTimer = () => {
+        stopTimer();
+        timer = setInterval(nextSlide, 3500);
+    };
+    const stopTimer = () => clearInterval(timer);
+    
+    prevBtn?.addEventListener('click', () => { prevSlide(); startTimer(); });
+    nextBtn?.addEventListener('click', () => { nextSlide(); startTimer(); });
+    aboutSlider.addEventListener('mouseenter', stopTimer);
+    aboutSlider.addEventListener('mouseleave', startTimer);
+    
+    let touchStartX = 0;
+    aboutSlider.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    aboutSlider.addEventListener('touchend', e => {
+        const diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) { diff > 0 ? nextSlide() : prevSlide(); startTimer(); }
+    });
+
+    startTimer();
+}
 
 // ───── Toast Notification ─────
 function showToast(message) {
@@ -289,7 +338,6 @@ function showToast(message) {
     }
     toast.textContent = message;
     
-    // Trigger reflow for animation
     void toast.offsetWidth;
     toast.classList.add('show');
     
