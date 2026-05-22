@@ -241,8 +241,15 @@ function initScrollReveal() {
 }
 
 function initActiveMenu() {
-    const sections = document.querySelectorAll('section[id]');
     const navItems = document.querySelectorAll('.nav-links a');
+    
+    // Solo observar las secciones que tienen un enlace en el menú
+    const validIds = Array.from(navItems).map(item => item.getAttribute('href').substring(1));
+    const validSections = [];
+    validIds.forEach(id => {
+        const sec = document.getElementById(id);
+        if (sec) validSections.push(sec);
+    });
 
     const navObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -257,11 +264,12 @@ function initActiveMenu() {
             }
         });
     }, {
-        threshold: 0.3,
-        rootMargin: "-20% 0px -60% 0px"
+        threshold: 0,
+        // Una línea imaginaria a la mitad exacta de la pantalla
+        rootMargin: "-40% 0px -60% 0px"
     });
 
-    sections.forEach(sec => navObserver.observe(sec));
+    validSections.forEach(sec => navObserver.observe(sec));
 }
 
 function initInfiniteMarquee() {
